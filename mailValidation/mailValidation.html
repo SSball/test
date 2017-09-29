@@ -1,0 +1,72 @@
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+ 
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+ 
+</head>
+<body>
+
+<input type=text id="address"></input>
+<input type="button" id="check" onclick="check()" value="確認"></input>
+
+<br>
+<output id="msg">メールアドレスを入力してください</output>
+
+<script>
+
+//$(function(){}); 
+
+function check(){
+    var text = $("#address").val(); //入力されたアドレスを取得
+    var result = ""; //結果格納用の変数
+    var color = "#000000";
+
+    $.ajax({ //パラメータ受け渡し
+        url:'domainList.xml', //xmlファイル名
+        type:'GET', //
+        dataType:'xml',  //xml型での受け渡し
+        timeout:1000,　//タイムアウト時間
+
+        //読み込み失敗時処理
+        error:function() { 
+            alert("読み込み失敗");
+        },
+
+        //読み込み成功時処理
+        success:function(xml){ 
+            //sampleタグを見つけるたびに以下の処理
+            $(xml).find("domain").each(function(){
+                //ドメイン名を取得
+                var dom = $(this).find('name').text(); 
+                cond = new RegExp("\." + dom + "$");
+                //１件でも一致していればその先は処理不要のため
+                if(result != "承認されていないドメインです"){          
+                    //メールアドレス形式の確認　何かしらが１文字以上　@の後に1文字以上　
+                    if(text.match(/.+@.+\./)==null){
+                        result = "メールアドレスの形式が不正です";
+                        color = "#FF0000";
+                    }else{
+                        //.の後にxmlファイル内に存在するドメイン名で終わる確認
+                        if(text.match(cond)!=null){
+                            result = "承認されていないドメインです";
+                            color = "#FF0000";
+                        }else{
+                            result = "チェックOKです";
+                            color = "#32CD32";
+                        }
+                    }
+                }
+            });
+            var msg = document.getElementById('msg');
+            msg.value　=　result;
+            msg.style.color = color;
+        }
+    });
+}
+
+
+</script>
+ 
+</body>
+</html>

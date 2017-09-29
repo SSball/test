@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<domain_list>
+	
+
+<domain>
+    <name>@yahoo.co.jp</name>
+</domain>
+
+<domain>
+    <name>@gmail.com</name>
+</domain>
+
+<domain>
+    <name>@outlook.jp</name>
+</domain>
+
+<domain>
+    <name>@outlook.com</name>
+</domain>
+
+<domain>
+    <name>@hotmail.co.jp</name>
+</domain>
+
+<domain>
+    <name>@live.jp</name>
+</domain>
+
+<domain>
+    <name>@aol.jp</name>
+</domain>
+
+<domain>
+    <name>.biglobe.ne.jp</name>
+</domain>
+
+<domain>
+    <name>@zoho.com</name>
+</domain>
+
+<domain>
+    <name>@yandex.com</name>
+</domain>
+
+<domain>
+    <name>@cx.117.cx</name>
+</domain>
+
+<domain>
+    <name>@momo-mail.com</name>
+</domain>
+
+<domain>
+    <name>@smoug.net</name>
+</domain>
+
+<domain>
+    <name>@mail.ru</name>
+</domain>
+
+<domain>
+    <name>@inbox.ru</name>
+</domain>
+
+<domain>
+    <name>@list.ru</name>
+</domain>
+
+<domain>
+    <name>@bk.ru</name>
+</domain>
+
+<domain>
+    <name>@mail.goo.ne.jp</name>
+</domain>
+
+
+</domain_list>
