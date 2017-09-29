@@ -1,0 +1,92 @@
+[Mon Jan 23 11:43:42.739852 2017] [mpm_prefork:notice] [pid 7289] AH00169: caught SIGTERM, shutting down
+[Mon Jan 23 11:43:46.003381 2017] [ssl:warn] [pid 11171] AH01906: www.example.com:443:0 server certificate is a CA certificate (BasicConstraints: CA == TRUE !?)
+[Mon Jan 23 11:43:46.003530 2017] [ssl:warn] [pid 11171] AH01909: www.example.com:443:0 server certificate does NOT include an ID which matches the server name
+[Mon Jan 23 11:43:46.003613 2017] [suexec:notice] [pid 11171] AH01232: suEXEC mechanism enabled (wrapper: /Applications/XAMPP/xamppfiles/bin/suexec)
+[Mon Jan 23 11:43:47.000918 2017] [ssl:warn] [pid 11172] AH01906: www.example.com:443:0 server certificate is a CA certificate (BasicConstraints: CA == TRUE !?)
+[Mon Jan 23 11:43:47.000996 2017] [ssl:warn] [pid 11172] AH01909: www.example.com:443:0 server certificate does NOT include an ID which matches the server name
+[Mon Jan 23 11:43:47.001069 2017] [lbmethod_heartbeat:notice] [pid 11172] AH02282: No slotmem from mod_heartmonitor
+[Mon Jan 23 11:43:47.001084 2017] [auth_digest:notice] [pid 11172] AH01757: generating secret for digest authentication ...
+[Mon Jan 23 11:43:47.014691 2017] [mpm_prefork:notice] [pid 11172] AH00163: Apache/2.4.23 (Unix) OpenSSL/1.0.2j PHP/5.6.28 mod_perl/2.0.8-dev Perl/v5.16.3 configured -- resuming normal operations
+[Mon Jan 23 11:43:47.014730 2017] [core:notice] [pid 11172] AH00094: Command line: '/Applications/XAMPP/xamppfiles/bin/httpd -E /Applications/XAMPP/xamppfiles/logs/error_log -D SSL -D PHP'
+[Mon Jan 23 11:45:15.214160 2017] [mpm_prefork:notice] [pid 11172] AH00169: caught SIGTERM, shutting down
+[Tue Jan 24 11:31:36.085225 2017] [ssl:warn] [pid 958] AH01906: www.example.com:443:0 server certificate is a CA certificate (BasicConstraints: CA == TRUE !?)
+[Tue Jan 24 11:31:36.100651 2017] [ssl:warn] [pid 958] AH01909: www.example.com:443:0 server certificate does NOT include an ID which matches the server name
+[Tue Jan 24 11:31:36.100830 2017] [suexec:notice] [pid 958] AH01232: suEXEC mechanism enabled (wrapper: /Applications/XAMPP/xamppfiles/bin/suexec)
+[Tue Jan 24 11:31:37.001069 2017] [ssl:warn] [pid 961] AH01906: www.example.com:443:0 server certificate is a CA certificate (BasicConstraints: CA == TRUE !?)
+[Tue Jan 24 11:31:37.001247 2017] [ssl:warn] [pid 961] AH01909: www.example.com:443:0 server certificate does NOT include an ID which matches the server name
+[Tue Jan 24 11:31:37.001400 2017] [lbmethod_heartbeat:notice] [pid 961] AH02282: No slotmem from mod_heartmonitor
+[Tue Jan 24 11:31:37.001431 2017] [auth_digest:notice] [pid 961] AH01757: generating secret for digest authentication ...
+[Tue Jan 24 11:31:37.181547 2017] [mpm_prefork:notice] [pid 961] AH00163: Apache/2.4.23 (Unix) OpenSSL/1.0.2j PHP/5.6.28 mod_perl/2.0.8-dev Perl/v5.16.3 configured -- resuming normal operations
+[Tue Jan 24 11:31:37.181592 2017] [core:notice] [pid 961] AH00094: Command line: '/Applications/XAMPP/xamppfiles/bin/httpd -E /Applications/XAMPP/xamppfiles/logs/error_log -D SSL -D PHP'
+[Tue Jan 24 11:32:53.433726 2017] [mpm_prefork:notice] [pid 961] AH00169: caught SIGTERM, shutting down
+[Thu Sep 21 12:35:48.104802 2017] [ssl:warn] [pid 2840] AH01906: www.example.com:443:0 server certificate is a CA certificate (BasicConstraints: CA == TRUE !?)
+[Thu Sep 21 12:35:48.126740 2017] [ssl:warn] [pid 2840] AH01909: www.example.com:443:0 server certificate does NOT include an ID which matches the server name
+[Thu Sep 21 12:35:48.126849 2017] [suexec:notice] [pid 2840] AH01232: suEXEC mechanism enabled (wrapper: /Applications/XAMPP/xamppfiles/bin/suexec)
+[Thu Sep 21 12:35:49.001611 2017] [ssl:warn] [pid 2841] AH01906: www.example.com:443:0 server certificate is a CA certificate (BasicConstraints: CA == TRUE !?)
+[Thu Sep 21 12:35:49.001697 2017] [ssl:warn] [pid 2841] AH01909: www.example.com:443:0 server certificate does NOT include an ID which matches the server name
+[Thu Sep 21 12:35:49.001779 2017] [lbmethod_heartbeat:notice] [pid 2841] AH02282: No slotmem from mod_heartmonitor
+[Thu Sep 21 12:35:49.001796 2017] [auth_digest:notice] [pid 2841] AH01757: generating secret for digest authentication ...
+[Thu Sep 21 12:35:49.240470 2017] [mpm_prefork:notice] [pid 2841] AH00163: Apache/2.4.23 (Unix) OpenSSL/1.0.2j PHP/5.6.28 mod_perl/2.0.8-dev Perl/v5.16.3 configured -- resuming normal operations
+[Thu Sep 21 12:35:49.240512 2017] [core:notice] [pid 2841] AH00094: Command line: '/Applications/XAMPP/xamppfiles/bin/httpd -E /Applications/XAMPP/xamppfiles/logs/error_log -D SSL -D PHP'
+[Thu Sep 21 13:43:25.922418 2017] [:error] [pid 2930] [client ::1:50495] script '/Applications/XAMPP/xamppfiles/htdocs/staff/staff_add_check.php' not found or unable to stat, referer: http://localhost/staff/staff_add.php
+[Thu Sep 21 14:23:57.937444 2017] [:error] [pid 2847] [client ::1:50796] script '/Applications/XAMPP/xamppfiles/htdocs/staff/staff_add_done.php' not found or unable to stat, referer: http://localhost/staff/staff_add_check.php
+[Thu Sep 21 14:25:40.888083 2017] [:error] [pid 2931] [client ::1:50805] script '/Applications/XAMPP/xamppfiles/htdocs/staff/staff_add_done.php' not found or unable to stat, referer: http://localhost/staff/staff_add_check.php
+[Thu Sep 21 14:29:17.867487 2017] [:error] [pid 4780] [client ::1:50819] script '/Applications/XAMPP/xamppfiles/htdocs/staff/staff_add_done.php' not found or unable to stat, referer: http://localhost/staff/staff_add_check.php
+[Thu Sep 21 14:29:35.755869 2017] [:error] [pid 2846] [client ::1:50821] script '/Applications/XAMPP/xamppfiles/htdocs/staff/staff_add_done.php' not found or unable to stat, referer: http://localhost/staff/staff_add_check.php
+[Thu Sep 21 14:32:39.708120 2017] [:error] [pid 2930] [client ::1:50831] script '/Applications/XAMPP/xamppfiles/htdocs/staff/staff_add_done.php' not found or unable to stat, referer: http://localhost/staff/staff_add_check.php
+[Thu Sep 21 15:23:54.079466 2017] [:error] [pid 2846] [client ::1:50982] script '/Applications/XAMPP/xamppfiles/htdocs/staff/staff_edit.php' not found or unable to stat, referer: http://localhost/staff/staff_list.php
+[Thu Sep 21 15:37:11.204433 2017] [:error] [pid 12707] [client ::1:51014] script '/Applications/XAMPP/xamppfiles/htdocs/staff/staff_edit_check.php' not found or unable to stat, referer: http://localhost/staff/staff_edit.php
+[Thu Sep 21 15:37:14.613709 2017] [:error] [pid 12707] [client ::1:51014] script '/Applications/XAMPP/xamppfiles/htdocs/staff/staff_edit_check.php' not found or unable to stat, referer: http://localhost/staff/staff_edit.php
+[Thu Sep 21 15:41:25.101125 2017] [mpm_prefork:notice] [pid 2841] AH00169: caught SIGTERM, shutting down
+[Fri Sep 22 10:01:57.145838 2017] [ssl:warn] [pid 15379] AH01906: www.example.com:443:0 server certificate is a CA certificate (BasicConstraints: CA == TRUE !?)
+[Fri Sep 22 10:01:57.160473 2017] [ssl:warn] [pid 15379] AH01909: www.example.com:443:0 server certificate does NOT include an ID which matches the server name
+[Fri Sep 22 10:01:57.160573 2017] [suexec:notice] [pid 15379] AH01232: suEXEC mechanism enabled (wrapper: /Applications/XAMPP/xamppfiles/bin/suexec)
+[Fri Sep 22 10:01:58.001600 2017] [ssl:warn] [pid 15537] AH01906: www.example.com:443:0 server certificate is a CA certificate (BasicConstraints: CA == TRUE !?)
+[Fri Sep 22 10:01:58.001698 2017] [ssl:warn] [pid 15537] AH01909: www.example.com:443:0 server certificate does NOT include an ID which matches the server name
+[Fri Sep 22 10:01:58.001788 2017] [lbmethod_heartbeat:notice] [pid 15537] AH02282: No slotmem from mod_heartmonitor
+[Fri Sep 22 10:01:58.001812 2017] [auth_digest:notice] [pid 15537] AH01757: generating secret for digest authentication ...
+[Fri Sep 22 10:01:58.375128 2017] [mpm_prefork:notice] [pid 15537] AH00163: Apache/2.4.23 (Unix) OpenSSL/1.0.2j PHP/5.6.28 mod_perl/2.0.8-dev Perl/v5.16.3 configured -- resuming normal operations
+[Fri Sep 22 10:01:58.375170 2017] [core:notice] [pid 15537] AH00094: Command line: '/Applications/XAMPP/xamppfiles/bin/httpd -E /Applications/XAMPP/xamppfiles/logs/error_log -D SSL -D PHP'
+[Fri Sep 22 10:23:50.595137 2017] [:error] [pid 15546] [client ::1:51514] script '/Applications/XAMPP/xamppfiles/htdocs/staff/staff_add_list.php' not found or unable to stat
+[Fri Sep 22 10:49:10.561334 2017] [:error] [pid 16254] [client ::1:51561] script '/Applications/XAMPP/xamppfiles/htdocs/staff/staff_delete.php' not found or unable to stat, referer: http://localhost/staff/staff_list.php
+[Fri Sep 22 11:13:09.668724 2017] [:error] [pid 15549] [client ::1:51587] script '/Applications/XAMPP/xamppfiles/htdocs/staff/staff_delete_check.php' not found or unable to stat, referer: http://localhost/staff/staff_delete.php?staffcode=4
+[Fri Sep 22 12:44:10.129023 2017] [:error] [pid 15547] [client ::1:52048] script '/Applications/XAMPP/xamppfiles/htdocs/staff/pro_add.php' not found or unable to stat
+[Fri Sep 22 12:47:24.163000 2017] [:error] [pid 15548] [client ::1:52059] script '/Applications/XAMPP/xamppfiles/htdocs/product/staff_list.php' not found or unable to stat, referer: http://localhost/product/pro_add_done.php
+[Fri Sep 22 12:59:46.563356 2017] [:error] [pid 25076] [client ::1:52082] script '/Applications/XAMPP/xamppfiles/htdocs/product/pro_ref.php' not found or unable to stat, referer: http://localhost/product/pro_list.php
+[Fri Sep 22 13:16:34.807734 2017] [:error] [pid 16253] [client ::1:52102] script '/Applications/XAMPP/xamppfiles/htdocs/product/pro_edit_check.php' not found or unable to stat, referer: http://localhost/product/pro_edit.php?procode=1
+[Fri Sep 22 15:22:28.307991 2017] [:error] [pid 25660] [client ::1:53151] script '/Applications/XAMPP/xamppfiles/htdocs/user_add/user_add_cmp.php' not found or unable to stat, referer: http://localhost/user_add/user_add.php
+[Fri Sep 22 15:31:42.352958 2017] [:error] [pid 16251] [client ::1:53217] script '/Applications/XAMPP/xamppfiles/htdocs/user_add/user_add_cmp.php' not found or unable to stat, referer: http://localhost/user_add/user_add.php
+[Fri Sep 22 15:37:36.796264 2017] [:error] [pid 16241] [client ::1:53488] script '/Applications/XAMPP/xamppfiles/htdocs/user_add/user_add_cmp.php' not found or unable to stat, referer: http://localhost/user_add/user_add.php
+[Fri Sep 22 15:50:17.649494 2017] [:error] [pid 15546] [client ::1:53542] script '/Applications/XAMPP/xamppfiles/htdocs/user_add/user_list.php' not found or unable to stat, referer: http://localhost/user_add/user_add_cmp.php
+[Fri Sep 22 15:50:32.309752 2017] [:error] [pid 16241] [client ::1:53546] script '/Applications/XAMPP/xamppfiles/htdocs/user_add/user_list.php' not found or unable to stat, referer: http://localhost/user_add/user_add_cmp.php
+[Fri Sep 22 19:00:16.982234 2017] [mpm_prefork:notice] [pid 15537] AH00169: caught SIGTERM, shutting down
+[Mon Sep 25 12:08:09.403990 2017] [ssl:warn] [pid 1211] AH01906: www.example.com:443:0 server certificate is a CA certificate (BasicConstraints: CA == TRUE !?)
+[Mon Sep 25 12:08:09.415317 2017] [ssl:warn] [pid 1211] AH01909: www.example.com:443:0 server certificate does NOT include an ID which matches the server name
+[Mon Sep 25 12:08:09.415415 2017] [suexec:notice] [pid 1211] AH01232: suEXEC mechanism enabled (wrapper: /Applications/XAMPP/xamppfiles/bin/suexec)
+[Mon Sep 25 12:08:10.001570 2017] [ssl:warn] [pid 1222] AH01906: www.example.com:443:0 server certificate is a CA certificate (BasicConstraints: CA == TRUE !?)
+[Mon Sep 25 12:08:10.001661 2017] [ssl:warn] [pid 1222] AH01909: www.example.com:443:0 server certificate does NOT include an ID which matches the server name
+[Mon Sep 25 12:08:10.001738 2017] [lbmethod_heartbeat:notice] [pid 1222] AH02282: No slotmem from mod_heartmonitor
+[Mon Sep 25 12:08:10.001755 2017] [auth_digest:notice] [pid 1222] AH01757: generating secret for digest authentication ...
+[Mon Sep 25 12:08:10.216971 2017] [mpm_prefork:notice] [pid 1222] AH00163: Apache/2.4.23 (Unix) OpenSSL/1.0.2j PHP/5.6.28 mod_perl/2.0.8-dev Perl/v5.16.3 configured -- resuming normal operations
+[Mon Sep 25 12:08:10.217016 2017] [core:notice] [pid 1222] AH00094: Command line: '/Applications/XAMPP/xamppfiles/bin/httpd -E /Applications/XAMPP/xamppfiles/logs/error_log -D SSL -D PHP'
+[Mon Sep 25 19:00:09.137119 2017] [mpm_prefork:notice] [pid 1222] AH00169: caught SIGTERM, shutting down
+[Tue Sep 26 13:20:09.200147 2017] [ssl:warn] [pid 1049] AH01906: www.example.com:443:0 server certificate is a CA certificate (BasicConstraints: CA == TRUE !?)
+[Tue Sep 26 13:20:09.233737 2017] [ssl:warn] [pid 1049] AH01909: www.example.com:443:0 server certificate does NOT include an ID which matches the server name
+[Tue Sep 26 13:20:09.233843 2017] [suexec:notice] [pid 1049] AH01232: suEXEC mechanism enabled (wrapper: /Applications/XAMPP/xamppfiles/bin/suexec)
+[Tue Sep 26 13:20:10.001557 2017] [ssl:warn] [pid 1199] AH01906: www.example.com:443:0 server certificate is a CA certificate (BasicConstraints: CA == TRUE !?)
+[Tue Sep 26 13:20:10.009426 2017] [ssl:warn] [pid 1199] AH01909: www.example.com:443:0 server certificate does NOT include an ID which matches the server name
+[Tue Sep 26 13:20:10.009520 2017] [lbmethod_heartbeat:notice] [pid 1199] AH02282: No slotmem from mod_heartmonitor
+[Tue Sep 26 13:20:10.009538 2017] [auth_digest:notice] [pid 1199] AH01757: generating secret for digest authentication ...
+[Tue Sep 26 13:20:10.493582 2017] [mpm_prefork:notice] [pid 1199] AH00163: Apache/2.4.23 (Unix) OpenSSL/1.0.2j PHP/5.6.28 mod_perl/2.0.8-dev Perl/v5.16.3 configured -- resuming normal operations
+[Tue Sep 26 13:20:10.493628 2017] [core:notice] [pid 1199] AH00094: Command line: '/Applications/XAMPP/xamppfiles/bin/httpd -E /Applications/XAMPP/xamppfiles/logs/error_log -D SSL -D PHP'
+[Tue Sep 26 18:33:02.427746 2017] [mpm_prefork:notice] [pid 1199] AH00169: caught SIGTERM, shutting down
+[Wed Sep 27 15:58:29.022966 2017] [ssl:warn] [pid 809] AH01906: www.example.com:443:0 server certificate is a CA certificate (BasicConstraints: CA == TRUE !?)
+[Wed Sep 27 15:58:29.030536 2017] [ssl:warn] [pid 809] AH01909: www.example.com:443:0 server certificate does NOT include an ID which matches the server name
+[Wed Sep 27 15:58:29.030661 2017] [suexec:notice] [pid 809] AH01232: suEXEC mechanism enabled (wrapper: /Applications/XAMPP/xamppfiles/bin/suexec)
+[Wed Sep 27 15:58:30.001665 2017] [ssl:warn] [pid 996] AH01906: www.example.com:443:0 server certificate is a CA certificate (BasicConstraints: CA == TRUE !?)
+[Wed Sep 27 15:58:30.002021 2017] [ssl:warn] [pid 996] AH01909: www.example.com:443:0 server certificate does NOT include an ID which matches the server name
+[Wed Sep 27 15:58:30.002468 2017] [lbmethod_heartbeat:notice] [pid 996] AH02282: No slotmem from mod_heartmonitor
+[Wed Sep 27 15:58:30.002576 2017] [auth_digest:notice] [pid 996] AH01757: generating secret for digest authentication ...
+[Wed Sep 27 15:58:31.027356 2017] [mpm_prefork:notice] [pid 996] AH00163: Apache/2.4.23 (Unix) OpenSSL/1.0.2j PHP/5.6.28 mod_perl/2.0.8-dev Perl/v5.16.3 configured -- resuming normal operations
+[Wed Sep 27 15:58:31.027486 2017] [core:notice] [pid 996] AH00094: Command line: '/Applications/XAMPP/xamppfiles/bin/httpd -E /Applications/XAMPP/xamppfiles/logs/error_log -D SSL -D PHP'
+[Wed Sep 27 18:11:53.025235 2017] [mpm_prefork:notice] [pid 996] AH00169: caught SIGTERM, shutting down
