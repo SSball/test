@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<race_list>
+	
+
+<race>
+    <name></name>
+    <def_abl></def_abl> <!-- 種族特徴 選択種族で固定1つ -->
+    <call_abl></call_abl> <!-- 非魔法系宣言特技 lvl -->
+    <mag_abl></mag_abl> <!-- 魔法系宣言特技 -->
+    <mag_type></mag_type> <!-- 使用する魔法系統 -->
+
+</race>
+
+
+
+
+
+</race_list>

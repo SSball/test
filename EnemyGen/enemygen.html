@@ -1,0 +1,155 @@
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+ 
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+</head>
+<body>
+
+  <form name="form1">
+    <select NAME="txtA">
+
+   <script>
+    for(var i = 1; i <= 50; i++){
+      document.write("<option value=\"" , i , "\">" , i , "</option>");
+    }
+    </script>
+
+    </select>
+    <select NAME="txtB">
+      <option value="人間">人間</option>
+      <option value="サキュバス">サキュバス</option>
+      <option value="エルフ">エルフ</option>
+      <option value="ドワーフ">ドワーフ</option>
+      <option value="シャドウ">シャドウ</option>
+      <option value="ナイトメア">ナイトメア</option>
+      <option value="タビット">タビット</option>
+      <option value="リルドラケン">リルドラケン</option>
+      <option value="ヴァルキリー">ヴァルキリー</option>
+      <option value="ナイトメア">ナイトメア</option>
+    </select>
+  </form>
+  
+  <input type="button" value="生成" onclick="Genr()"></input><br>
+  <textarea id="result" rows="50" cols="100"></textarea>
+
+</div>
+  
+<script>
+    var actTimes = [``,``,`○2回行動 \n\n`,`○3回行動\n\n`]
+    var callAbl = [``,`☑全力攻撃`, ``,``,``,``];
+    var magAbl = [``,`☑魔法拡大/数 `,`☑魔法拡大/時間 `,`☑魔法拡大/範囲 `,`☑マルチアクション `,`☑魔力撃 `,``,``,``,``];
+    var mag = [`真語魔法 `,`操霊魔法 `,`妖精魔法 `,`神聖魔法 `,`召異魔法 `,``,``,``,``];
+    
+  function Genr() {
+    var sts = "";
+    var lvl = document.form1.txtA.value;
+    var race = document.form1.txtB.value;
+    if(race == "人間"){sts = GenrHum(lvl);}
+    if(race == "エルフ"){sts = GenrElf(lvl);}
+    if(race == "ドワーフ"){sts = GenrDwf(lvl);}
+    if(race == "サキュバス"){sts = GenrScc(lvl);}
+    document.getElementById('result').value=sts;
+  }
+  
+  //人間生成
+  function GenrHum(lvl){
+    var result;
+    lvl = parseInt(lvl);
+    var stDex = rand(lvl/4, lvl/7);　var stAgi = rand(lvl/4, lvl/7);　var stStr = rand(lvl/4, lvl/7);
+    var stVit = rand(lvl/4, lvl/7);　var stKnw = rand(lvl/4, lvl/7);　var stMid = rand(lvl/4, lvl/7);
+    var hp = rand(lvl*12, lvl*7)+stVit*6+2;  var mp = rand(lvl*12, lvl*7)+stMid*6+2; 
+    
+    //基礎ステータス
+    var result = "魔物レベル:"+lvl+"　種族:人間"+"　先制値："+(lvl+stAgi+2)+"　";
+    result += "知名度/弱点値: "+(lvl+4+stMid)+"/"+(lvl+6+stKnw+stMid)+"\n\n" + "生命抵抗力:"+(lvl+stVit+1)+"("+(lvl+stVit+8)+")　";
+    result += "精神抵抗力:"+(lvl+stMid+1)+"("+(lvl+stMid+8)+")\n\n"+ "打撃点: 2d+"+(lvl+stStr+2)+"　";
+    result += "命中: "+(lvl+stDex+2)+"("+(lvl+stDex+9)+")　" + "回避: "+(lvl+stAgi+2)+"("+(lvl+stAgi+9)+")　";
+    result += "防護点: "+(lvl+rand(-1,stVit*2))+"　"+ "HP: "+hp+"　"+ "MP: "+mp+"\n\n";
+    
+    result += randCho(callAbl,lvl)+"\n\n" + "▼剣の加護・運命変転\n\n"; if(lvl > 16){result += "▼剣の加護・運命凌駕\n\n";}
+    if(lvl > 15){result += randCho(actTimes,rand(1,0))};
+    var magLvl = lvl-rand(3,0); var magType = randCho(mag,rand(lvl/5,0));
+    if(magLvl > 0 && magType.length > 0){result += randCho(magAbl,lvl)+"\n\n";}    
+    if(magLvl > 0 && magType.length > 0){result += magType+magLvl+"レベル 魔力"+(magLvl+stKnw)+"("+(magLvl+stKnw+7)+")"+"\n\n";}
+    result += "戦利品\n"
+    var border1 = rand(6,4); var border2 = rand(12,border1+2);
+    result += 2+"～"+border1+":"+(rand(lvl*3,lvl)*10*lvl)+"\n"+ border1+1+"～"+border2+":"+(rand(lvl*4,lvl*3)*10*lvl)+"\n"+ border2+1+"～:"+(rand(lvl*5,lvl*4)*10*lvl);
+    
+    return result;
+  }
+  
+  //エルフ生成
+  function GenrElf(lvl){
+    var result;
+    lvl = parseInt(lvl);
+    var stDex = rand(lvl/3, lvl/6);　var stAgi = rand(lvl/4, lvl/7);　var stStr = rand(lvl/5, lvl/8);
+    var stVit = rand(lvl/5, lvl/8);　var stKnw = rand(lvl/3, lvl/6);　var stMid = rand(lvl/4, lvl/7);
+    var hp = rand(lvl*11, lvl*6)+stVit*6+2;  var mp = rand(lvl*13, lvl*8)+stMid*6+2; 
+    
+    //基礎ステータス
+    var result = "魔物レベル:"+lvl+"　種族:エルフ"+"　先制値："+(lvl+stAgi+2)+"　";
+    result += "知名度/弱点値: "+(lvl+4+stMid)+"/"+(lvl+6+stKnw+stMid)+"\n\n" + "生命抵抗力:"+(lvl+stVit+1)+"("+(lvl+stVit+8)+")　";
+    result += "精神抵抗力:"+(lvl+stMid+1)+"("+(lvl+stMid+8)+")\n\n"+ "打撃点: 2d+"+(lvl+stStr+2)+"　";
+    result += "命中: "+(lvl+stDex+2)+"("+(lvl+stDex+9)+")　" + "回避: "+(lvl+stAgi+2)+"("+(lvl+stAgi+9)+")　";
+    result += "防護点: "+(lvl+rand(-1,stVit*1.5))+"　"+ "HP: "+hp+"　"+ "MP: "+mp+"\n\n";
+    
+    result += randCho(callAbl,lvl)+"\n\n" + "▼剣の加護・優しき水\n\n"; if(lvl > 16){result += "▼剣の加護・運命凌駕\n\n";}
+    var magLvl = lvl-rand(3,0); var magType = randCho(mag,rand(stKnw,0));
+    if(magLvl > 0 && magType.length > 0){result += randCho(magAbl,lvl)+"\n\n";}    
+    if(magLvl > 0 && magType.length > 0){result += magType+magLvl+"レベル 魔力"+(magLvl+stKnw)+"("+(magLvl+stKnw+7)+")"+"\n\n";}
+    result += "戦利品\n"
+    var border1 = rand(6,4); var border2 = rand(12,border1+2);
+    result += 2+"～"+border1+":"+(rand(lvl*3,lvl)*10*lvl)+"\n"+ border1+1+"～"+border2+":"+(rand(lvl*4,lvl*3)*10*lvl)+"\n"+ border2+1+"～:"+(rand(lvl*5,lvl*4)*10*lvl);
+    
+    return result;
+  }
+    
+  function GenrScc(lvl){
+    var result;
+    lvl = parseInt(lvl);
+    var stDex = rand(lvl/3, lvl/6);　var stAgi = rand(lvl/4, lvl/7);　var stStr = rand(lvl/5, lvl/8);
+    var stVit = rand(lvl/5, lvl/8);　var stKnw = rand(lvl/3, lvl/6);　var stMid = rand(lvl/4, lvl/7);
+    var hp = rand(lvl*11, lvl*6)+stVit*6+2;  var mp = rand(lvl*13, lvl*8)+stMid*6+2; 
+    
+    //基礎ステータス
+    var result = "魔物レベル:"+lvl+"　種族:エルフ"+"　先制値："+(lvl+stAgi+2)+"　";
+    result += "知名度/弱点値: "+(lvl+4+stMid)+"/"+(lvl+6+stKnw+stMid)+"\n\n" + "生命抵抗力:"+(lvl+stVit+1)+"("+(lvl+stVit+8)+")　";
+    result += "精神抵抗力:"+(lvl+stMid+1)+"("+(lvl+stMid+8)+")\n\n"+ "打撃点: 2d+"+(lvl+stStr+2)+"　";
+    result += "命中: "+(lvl+stDex+2)+"("+(lvl+stDex+9)+")　" + "回避: "+(lvl+stAgi+2)+"("+(lvl+stAgi+9)+")　";
+    result += "防護点: "+(lvl+rand(-1,stVit*1.5))+"　"+ "HP: "+hp+"　"+ "MP: "+mp+"\n\n";
+    
+    result += randCho(callAbl,lvl)+"\n\n" + "▼剣の加護・優しき水\n\n"; if(lvl > 16){result += "▼剣の加護・運命凌駕\n\n";}
+    var magLvl = lvl-rand(3,0); var magType = randCho(mag,rand(stKnw,0));
+    if(magLvl > 0 && magType.length > 0){result += randCho(magAbl,lvl)+"\n\n";}    
+    if(magLvl > 0 && magType.length > 0){result += magType+magLvl+"レベル 魔力"+(magLvl+stKnw)+"("+(magLvl+stKnw+7)+")"+"\n\n";}
+    result += "戦利品\n"
+    var border1 = rand(6,4); var border2 = rand(12,border1+2);
+    result += 2+"～"+border1+":"+(rand(lvl*3,lvl)*10*lvl)+"\n"+ border1+1+"～"+border2+":"+(rand(lvl*4,lvl*3)*10*lvl)+"\n"+ border2+1+"～:"+(rand(lvl*5,lvl*4)*10*lvl);
+    
+    return result;
+  }
+    
+    
+  
+  function randCho(array, num) {
+    var c;
+    var listAbl = "";
+    var listInd = [];
+    for(c=0; c<num; c++){ //引数で与えられた数値回だけ判定
+      var ind = rand(0,array.length); //ランダムなインデックス番号を取得
+      if(listInd.indexOf(ind)<0){ //
+        listAbl += array[ind];
+        listInd.push(ind);
+      }
+    }
+   return listAbl;
+}
+  
+  function rand(max,min){
+    return Math.floor( Math.random() * (max - min + 1) + min);
+  }
+  
+</script>
+</body>
+</html>
