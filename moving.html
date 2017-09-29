@@ -1,0 +1,33 @@
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js">
+</script>
+ 
+</head>
+<body>
+
+<output id="output"></output>
+
+<canvas width="800" height="800" id="c"></canvas>
+
+<script>
+
+
+var anim = function() {
+	
+};
+
+(function loop(){
+  anim();
+  document.getElementById("output").value += "-";
+  window.requestAnimationFrame(loop);
+}());
+
+
+</script> 
+
+
+</body>
+</html>
