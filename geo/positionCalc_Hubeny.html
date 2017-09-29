@@ -1,0 +1,59 @@
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js">
+</script>
+ 
+</head>
+<body>
+
+地点１
+緯度：<input type="text" id="lat1"></input>
+経度：<input type="text" id="lon1"></input>
+<br>
+
+地点２
+緯度：<input type="text" id="lat2"></input>
+経度：<input type="text" id="lon2"></input>
+<br>
+
+<input type="button" onclick="calc()" value="測定"></input>
+<br>
+
+<output id="output"></output>
+
+<script>
+
+function calc(){
+	var lat1 = parseFloat($("#lat1").val());
+	var lon1 = parseFloat($("#lon1").val());
+	var lat2 = parseFloat($("#lat2").val());
+	var lon2 = parseFloat($("#lon2").val());
+	var y1 = lat1 * Math.PI / 180; //ラジアン変換
+	var x1 = lon1 * Math.PI / 180;
+	var y2 = lat2 * Math.PI / 180;
+	var x2 = lon2 * Math.PI / 180;
+	var output = document.getElementById('output');
+	var a = 6378137; //赤道半径
+	var b = 6356752.314245; //極半径
+
+	var dy = Math.abs(y1 - y2); //緯度の差
+	var dx = Math.abs(x1 - x2); //軽度の差
+	var avrLat = (y1 + y2) / 2; // 緯度の平均値
+	var e2 = Math.abs( ( (a ** 2) - (b ** 2) ) / (a ** 2) ); //第一離心率の２乗
+	var W = Math.sqrt( Math.abs(1 - (e2 * (Math.sin(avrLat) ** 2)) ) );
+	var M = (a * (1 - e2)) / (W ** 3); //子午線曲率半径
+	var N = a / W; //卯酉線曲率半径
+	var d = Math.sqrt(Math.abs( ((dy * M) ** 2) + ((dx * N * Math.cos(avrLat) ) )**2 ) ); //ヒュベニの公式
+	//参考HP　http://yamadarake.jp/trdi/report000001.html
+
+	output.value = d + " m";
+}
+
+
+</script> 
+
+
+</body>
+</html>

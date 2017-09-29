@@ -1,0 +1,72 @@
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+ 
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+ 
+</head>
+<body>
+
+<input type=text id="goal"></input>
+<input type="button" id="check" onclick="check()" value="確認"></input>
+<br>
+
+<output id="lat"></output>
+<br>
+
+<output id="lon"></output>
+
+<script>
+
+
+
+
+
+
+
+$(function(){});
+
+
+
+function check(){
+
+    var urlPara = "http://www.geocoding.jp/api/?q=";
+    urlPara += $("#goal").val(); //目的地の取得
+
+    $.ajax({ //パラメータ受け渡し
+        url:urlPara, //リクエスト先
+        type:'GET', //
+        dataType:'xml',  //xml型での受け渡し
+        timeout:10000,　//タイムアウト時間
+    }).then(
+        //success
+        function(xml){
+                alert("OK");
+                var lat = $(xml).find('lat_dms').text(); 
+                var lon = $(xml).find('lng_dms').text(); 
+
+                document.getElementById("lat").value = lat;
+                document.getElementById("lon").value = lon;
+                },
+        //error
+        function(XMLHttpRequest, textStatus, errorThrown){
+            alert("読み込み失敗");
+            console.log("XMLHttpRequest : " + XMLHttpRequest.status);
+            console.log("textStatus     : " + textStatus);
+            console.log("errorThrown    : " + errorThrown.message);
+        });
+
+}; 
+
+
+
+
+
+
+
+
+
+</script>
+ 
+</body>
+</html>

@@ -1,0 +1,178 @@
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js">
+</script>
+ 
+</head>
+<body>
+
+<p><button onclick="find()">測定</button></p>
+<br>
+
+距離：<output id="dis"></output>
+<br>
+
+方角：<output id = "dir"></output>
+
+
+<script>
+
+var x2 = 139.701636;//渋谷駅
+var y2 = 35.658034;
+
+function find() {
+  var navi = navigator.geolocation;
+
+  navi.getCurrentPosition(success, error); //現在IDの取得　成功失敗で分岐処理
+
+  //成功時処理
+  function success(position) {
+    var x = parseFloat(position.coords.longitude); //経度の取得
+    var y = parseFloat(position.coords.latitude); //緯度の取得
+
+    var dir = calcDir(x,y); //方位算出
+    document.getElementById("dir").value = dir;
+
+    var dis = calcDis(x,y); //距離算出
+    document.getElementById("dis").value = dis + "m";
+
+  };
+
+
+  //エラー時処理
+  function error() {
+    alert("位置情報の取得に失敗しました");
+  };
+}
+
+function calcDis(x1,y1){
+  
+  var yr1 = y1 * Math.PI / 180; //ラジアン変換
+  var xr1 = x1 * Math.PI / 180;
+  var yr2 = y2 * Math.PI / 180;
+  var xr2 = x2 * Math.PI / 180;
+
+  var a = 6378137; //赤道半径
+  var b = 6356752.314245; //極半径
+
+  var dy = Math.abs(yr1 - yr2); //緯度の差
+  var dx = Math.abs(xr1 - xr2); //軽度の差
+  var avrLat = (yr1 + yr2) / 2; // 緯度の平均値
+  var e2 = Math.abs( ( (a ** 2) - (b ** 2) ) / (a ** 2) ); //第一離心率の２乗
+  var W = Math.sqrt( Math.abs(1 - (e2 * (Math.sin(avrLat) ** 2)) ) );
+  var M = (a * (1 - e2)) / (W ** 3); //子午線曲率半径
+  var N = a / W; //卯酉線曲率半径
+  var d = Math.sqrt(Math.abs( ((dy * M) ** 2) + ((dx * N * cos(avrLat) ) )**2 ) ); //ヒュベニの公式
+  //参考HP　http://yamadarake.jp/trdi/report000001.html
+  return d;
+}
+
+function calcDir(x1,y1){
+
+  var Y = cos(x2) * sin(y2 - y1);
+  var X = cos(x1) * sin(x2) - sin(x1) * cos(x2) * cos(y2 - y1); 
+  var dirE = 180 * Math.atan2(Y,X) / Math.PI;
+
+  if(dirE < 0){
+    dirE = dirE + 360;
+  }
+  var dirN = (dirE + 90) % 360;
+
+  //22.5刻み　北東は22.5-67.5 max uni * 16
+  var uni = 45;
+  var dirR = "None";
+  if(dirN < uni){
+  	dirR = "北";
+  }else if(dir < 3 * uni){
+  	dirR = "北東";
+  }else if(dir < 5 * uni){
+  	dirR = "東";
+  }else if(dir < 7 * uni){
+  	dirR = "南東";
+  }else if(dir < 9 * uni){
+    dirR = "南";
+  }else if(dir < 11 * uni){
+    dirR = "南西";
+  }else if(dir < 13 * uni){
+    dirR = "西";
+  }else if(dir < 15 * uni){
+    dirR = "北西";
+  }else{
+    dirR = "北";
+  }
+  
+
+  return dirR;
+  //参考HP http://hamasyou.com/blog/2010/09/07/post-2/
+}
+
+//三角比の引数を度数で受け取るメソッド
+function sin(deg){
+  return Math.sin(deg * Math.PI / 180);
+}
+function cos(deg){
+  return Math.cos(deg * Math.PI / 180);
+}
+function tan(deg){
+  return Math.tan(deg * Math.PI / 180);
+}
+
+  /*国土地理院　緯度経度から方位の算出（挫折）
+  var f = 1 / 298.257223563;
+
+  var l = x2 - x1;
+  var l2;
+  if(l > 180){
+    l2 = l - 360;
+  }else if(l < -180){
+    l2 = l + 360;
+  }else{
+    l2 = l;
+  }
+  var L = Math.abs(l2);
+  var L2 = 180 - L;
+  var del;
+  if(l2 >= 0){
+    del = y2 - y1;
+  }else{
+    del = y1 - y2;
+  }
+  var sig = y1 + y2;
+  var u1;
+  var u2;
+  if(l >= 0){
+    u1 = tan((1 - f) * tan(y1)) ** -1;
+    u2 = tan((1 - f) * tan(y2)) ** -1;
+  }else{
+    u1 = tan((1 - f) * tan(y2)) ** -1;
+    u2 = tan((1 - f) * tan(y1)) ** -1;
+  }
+  sig2 = u1 + u2;
+  del2 = u2 - u1;
+  var xi = cos(sig2 / 2);
+  var xi2 = sin(sig2 / 2);
+  var eta = sin(del2 / 2);
+  var eta2 = cos(del2 / 2);
+  var xx = sin(u1) * sin(u2);
+  var yy = cos(u1) * cos(u2);
+  var c = yy * cos(L) + xx;
+  var eps = (f * (2 - f)) / ((1 - f) ** 2);
+  if(c >= 0){
+    the = L * (1 + f * yy);
+  }else if(c >= ((cos((3 / 360) * cos(u1)) ) * -1) ){
+    the = L2;
+  }
+  var g = Math.sqrt((eta ** 2) * (cos(the / 2) ** 2) + (xi ** 2) * (sin(the / 2) ** 2));
+  var h = Math.sqrt((eta2 ** 2) * (cos(the / 2) ** 2) + (xi2 ** 2) * (sin(the / 2) ** 2));
+
+  var alp;
+  */
+
+
+</script> 
+
+
+</body>
+</html>

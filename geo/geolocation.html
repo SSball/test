@@ -1,0 +1,63 @@
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js">
+</script>
+ 
+</head>
+<body>
+
+<p><button onclick="calc()">測定</button></p>
+<div id="output"></div>
+<div id="pic"></div>
+
+
+<script>
+//現在地からメッカまでの方位と距離を教えてくれる
+//距離はいいとして
+//方位角は北：:0度、東：90度、南：180度、西270度で表示　18度刻み
+//方位角=90-atan2(sin(x2-x1),cos(y1)tan(y2)-sin(y1)cos(x2-x1))
+
+function calc() {
+  var out = document.getElementById("output");
+  var pic = document.getElementById("pic");
+  var navi = navigator.geolocation;
+
+  //??
+  if (!navi){
+    out.innerHTML = "<p>Geolocation is not supported by your browser</p>"; //
+    return;
+  }
+
+  out.innerHTML = "<p>ロード中…</p>";
+
+  navi.getCurrentPosition(success, error); //現在IDの取得　成功失敗で分岐処理
+
+  //成功時処理
+  function success(position) {
+    //var x = parseFloat(position.coords.longitude); //経度の取得
+    //var y = parseFloat(position.coords.latitude); //緯度の取得
+    var mx = 39.857912; //メッカの緯度経度
+    var my = 21.389082; 
+
+    var img = new Image(); //??
+    img.src = "https://maps.googleapis.com/maps/api/staticmap?center=" + my + "," + mx + "&zoom=13&size=500x500&sensor=false"; //URL作成
+    alert(img.src);
+
+    out.appendChild(img); //??
+  };
+
+
+  //エラー時処理
+  function error() {
+    out.innerHTML = '<p>位置情報を取得できません</p>';
+  };
+}
+
+
+</script> 
+
+
+</body>
+</html>

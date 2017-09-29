@@ -1,0 +1,187 @@
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js">
+</script>
+
+<script src="https://frogcat.github.io/canvas-arrow/canvas-arrow.js">
+//from http://qiita.com/frogcat/items/2f94b095b4c2d8581ff6
+</script>
+ 
+</head>
+<body>
+
+出発地点
+<br>
+
+<button onclick="find()">現在値の取得</button>
+<br>
+
+緯度：<input type="text" id="y1"></input>
+<br>
+
+経度：<input type="text" id="x1"></input>
+<br><br>
+
+目的地
+<br>
+
+<!--初期値はメッカ-->
+緯度：<input type="text" id="y2" value="21.389082"></input>
+<br>
+
+経度：<input type="text" id="x2" value="39.857912"></input>
+<br>
+
+<button onclick="calc()">測定</button>
+<br><br>
+
+距離：<output id="dis"></output>
+<br>
+
+方角：<output id = "dir"></output>
+<br>
+
+<canvas id = "arr"></canvas>
+<br>
+
+<output id="pic"></output>
+<br>
+
+<script>
+
+var x2;
+var y2;
+
+//描画準備
+var canvas = document.getElementById('arr');
+canvas.width = 60; //カンバス＝縦横60px
+canvas.height = 60; 
+canvas.style.position = "absolute"; //カンバス位置指定　左上から330px,255pxの位置
+canvas.style.left = "330px";
+canvas.style.top = "255px";
+var ctx = canvas.getContext('2d'); //二次元グラフィックコンテキスト
+
+var pic = document.getElementById("pic");
+
+//現在地取得
+function find(){
+  var navi = navigator.geolocation; //geolocationオブジェクト生成
+
+  navi.getCurrentPosition(success, error); //現在IDの取得　成功失敗で分岐処理
+
+  //成功時処理
+  function success(position) {
+    document.getElementById("x1").value  = parseFloat(position.coords.longitude); //経度の取得
+    document.getElementById("y1").value = parseFloat(position.coords.latitude); //緯度の取得
+  }
+
+  //エラー時処理
+  function error() {
+    alert("位置情報の取得に失敗しました"); //エラーメッセージ
+  };
+
+}
+
+
+//測定
+function calc() {  
+    var x = parseFloat($("#x1").val()); //現在地の緯度経度　入力欄より取得
+    var y = parseFloat($("#y1").val());
+    x2 = parseFloat($("#x2").val()); //目的地の緯度経度　同様に入力欄より
+    y2 = parseFloat($("#y2").val());
+
+    var dir = calcDir(x,y); //方位算出
+    document.getElementById("dir").value = dir + "°"; //出力欄に表示
+
+    var dis = calcDis(x,y); //距離算出
+    dis = parseInt(dis);
+    dis = Number(dis).toLocaleString();
+    document.getElementById("dis").value = dis + "m"; //出力欄に表示
+
+    while(pic.hasChildNodes()){
+      pic.removeChild(pic.firstChild); //地図の初期化
+    }
+
+    var img = new Image();
+    var src = "https://maps.googleapis.com/maps/api/staticmap?center=" + y + "," + x + "&zoom=13&size=300x300&sensor=false"; //現在地点地図のURL作成
+    img.src = src;
+
+    pic.appendChild(img); //要素にイメージを追加
+};
+
+
+//距離を算出するメソッド
+function calcDis(x1,y1){
+  
+  var yr1 = y1 * Math.PI / 180; //ラジアン変換
+  var xr1 = x1 * Math.PI / 180;
+  var yr2 = y2 * Math.PI / 180;
+  var xr2 = x2 * Math.PI / 180;
+
+  var a = 6378137; //赤道半径
+  var b = 6356752.314245; //極半径
+
+  var dy = Math.abs(yr1 - yr2); //緯度の差
+  var dx = Math.abs(xr1 - xr2); //軽度の差
+  var avrLat = (yr1 + yr2) / 2; // 緯度の平均値
+  var e2 = Math.abs( ( (a ** 2) - (b ** 2) ) / (a ** 2) ); //第一離心率の２乗
+  var W = Math.sqrt( Math.abs(1 - (e2 * (Math.sin(avrLat) ** 2)) ) );
+  var M = (a * (1 - e2)) / (W ** 3); //子午線曲率半径
+  var N = a / W; //卯酉線曲率半径
+  var d = Math.sqrt(Math.abs( ((dy * M) ** 2) + ((dx * N * cos(avrLat) ) )**2 ) ); //ヒュベニの公式
+  //参考HP　http://yamadarake.jp/trdi/report000001.html
+
+  return d;
+}
+
+//方角を算出するメソッド
+function calcDir(x1,y1){
+
+  var Y = cos(x2) * sin(y2 - y1);
+  var X = cos(x1) * sin(x2) - sin(x1) * cos(x2) * cos(y2 - y1); 
+  var dirE = 180 * Math.atan2(Y,X) / Math.PI;
+
+  if(dirE < 0){
+    dirE = dirE + 360;
+  }
+  var dirN = (dirE + 90) % 360;
+
+  arrow(dirN);
+  
+  return dirN;
+  //参考HP http://hamasyou.com/blog/2010/09/07/post-2/
+}
+
+//矢印を書き出すメソッド
+function arrow(deg) {
+
+    ctx.clearRect(0,0,60,60);//canvas初期化
+    ctx.beginPath();
+
+    //(30,30)を内心に内心に半径25の円を描画
+    ctx.arc(30,30,25,0*Math.PI,2*Math.PI);
+    //(30,35)を起点に長さ25の矢印を描画
+    ctx.arrow(30, 30, 30 + 25 * sin(deg), 30 - 25 * cos(deg), 
+      [0, 0.2, -5, 0.2, -5, 5]);
+    ctx.stroke();
+}
+
+//三角比の引数を度数で処理するメソッド（ラジアンに変換するのめんどくさい）
+function sin(deg){
+  return Math.sin(deg * Math.PI / 180);
+}
+function cos(deg){
+  return Math.cos(deg * Math.PI / 180);
+}
+function tan(deg){
+  return Math.tan(deg * Math.PI / 180);
+}
+
+
+</script> 
+
+
+</body>
+</html>
