@@ -1,0 +1,36 @@
+
+
+param
+・XXXXX バリデーションの趣旨
+・DBName 使用データベース名
+
+	/**
+	 * ---のバリデーション実行
+	 * @param array $data 入力データ
+	 * @return array $error
+	 */
+	public function validateXXXXX($data){
+		$error = [];
+
+		//モデル取得
+		$DBName = ClassRegistry::init('DBName');
+
+		//バリデーションルール取得
+		$DBName->validate = $this->__getValidateXXXXX();
+
+		// バリデーションを実行してエラーを取得
+		$error = parent::__doValidates($DBName);
+
+		// データをクリアする
+		$DBName->clear();
+
+		return $error;
+	}
+	
+	 /**
+     * バリデーション項目定義
+     * ・ダッシュボード名
+     * ・MO案件ID
+     *
+     * @return array バリデーションルール
+     */

@@ -1,0 +1,36 @@
+・チケット発行時
+Overview
+・（Listing...）
+・
+Modification Items
+・
+・
+Deadline
+
+
+
+
+
+
+・レビュー
+Hi, Judit
+
+Thanks to your response.
+I've reviewed your code and found 2 problems as below.
+
+OR
+
+Thanks to your response.
+I've reviewed your code and found no problem.
+
+
+
+・完了
+Hi, Judit
+
+Thanks to your efforts.
+We've checked your modification in this ticket runs correctly.
+So, this ticket is to be closed.
+
+Thanks and Regards
+T,Osakabe

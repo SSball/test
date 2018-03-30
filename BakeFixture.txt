@@ -1,0 +1,5 @@
+・bake fixture
+
+/vagrant/app/Console/cake bake fixture -app /vagrant/app -r
+
+フィクスチャ一覧が表示されるので任意の名称を押下
