@@ -1,0 +1,818 @@
+
+
+
+SELECT
+  ContractManage.id as ContractManage__id
+  , ContractManage.contract_id as ContractManage__contract_id
+  , ContractManage.contract_name as ContractManage__contract_name
+  , ContractManage.client_id as ContractManage__client_id
+  , ContractManage.service_category_large_id as ContractManage__service_category_large_id
+  , ContractManage.service_category_small_id as ContractManage__service_category_small_id
+  , ContractManage.sales_person_name as ContractManage__sales_person_name
+  , ContractManage.operate_person_name as ContractManage__operate_person_name
+  , ContractManage.note as ContractManage__note
+  , ContractManage.created as ContractManage__created
+  , ServiceCategoryLarge.service_category_large_id as ServiceCategoryLarge__service_category_large_id
+  , ServiceCategoryLarge.service_category_large_name as ServiceCategoryLarge__service_category_large_name
+  , ServiceCategorySmall.service_category_large_id as ServiceCategorySmall__service_category_large_id
+  , ServiceCategorySmall.service_category_small_id as ServiceCategorySmall__service_category_small_id
+  , ServiceCategorySmall.service_category_small_name as ServiceCategorySmall__service_category_small_name
+  , AdvertisementTagId.tagid
+  , TagManage.id as TagManage__id
+  , TagManage.contract_manage_id as TagManage__contract_manage_id
+  , TagManage.tag_no as TagManage__tag_no
+  , TagManage.tag_name as TagManage__tag_name
+  , TagManage.disp_flag_list as TagManage__disp_flag_list
+  , TagManage.advertisement_id as TagManage__advertisement_id
+  , TagManage.website_id as TagManage__website_id
+  , DATE_FORMAT(TagManage.created, '%Y-%m-%d') as TagManage__created
+  , TagExtraInfo.id as TagExtraInfo__id
+  , TagExtraInfo.tag_manage_id as TagExtraInfo__tag_manage_id
+  , TagExtraInfo.measure_from_schedule as TagExtraInfo__measure_from_schedule
+  , TagExtraInfo.distribution_start_time as TagExtraInfo__distribution_start_time
+  , TagExtraInfo.measure_to_schedule as TagExtraInfo__measure_to_schedule
+  , TagExtraInfo.device as TagExtraInfo__device
+  , TagExtraInfo.supposition_impression as TagExtraInfo__supposition_impression
+  , TagExtraInfo.media_flg as TagExtraInfo__media_flg
+  , TagExtraInfo.media as TagExtraInfo__media
+  , TagExtraInfo.targeting_flg as TagExtraInfo__targeting_flg
+  , TagExtraInfo.targeting as TagExtraInfo__targeting
+  , TagExtraInfo.frequency_flg as TagExtraInfo__frequency_flg
+  , TagExtraInfo.frequency as TagExtraInfo__frequency
+  , TagExtraInfo.playback_mode as TagExtraInfo__playback_mode
+  , TagExtraInfo.cm_publish as TagExtraInfo__cm_publish
+  , TagExtraInfo.cm_grp as TagExtraInfo__cm_grp
+  , TagExtraInfo.cm_creative as TagExtraInfo__cm_creative
+  , TagExtraInfo.cm_info as TagExtraInfo__cm_info
+  , TagExtraInfo.cm_from_schedule as TagExtraInfo__cm_from_schedule
+  , TagExtraInfo.cm_to_schedule as TagExtraInfo__cm_to_schedule
+  , TagExtraInfo.memo as TagExtraInfo__memo
+  , TagViewInfo.id as TagViewInfo__id
+  , TagViewInfo.tag_manage_id as TagViewInfo__tag_manage_id
+  , TagViewInfo.option_tag_type as TagViewInfo__option_tag_type
+  , TagDetailInfo.id as TagDetailInfo__id
+  , TagDetailInfo.client_id as TagDetailInfo__client_id
+  , TagDetailInfo.name as TagDetailInfo__name
+  , null as fqdn
+  , TagDetailInfo.landing_url as TagDetailInfo__landing_url
+  , TagDetailInfo.enabled_flag as TagDetailInfo__enabled_flag
+  , TagDetailInfo.be_testmoded as TagDetailInfo__be_testmoded
+  , TagDetailInfo.visit_time as TagDetailInfo__visit_time
+  , TagDetailInfo.expire as stop_measure_date
+  , TagDetailInfo.advertisement_type as TagType
+  , TagDetailInfo.impression_limit as impression_limit
+  , TagDetailInfo.duration as TagDetailInfo__duration
+  , null as website_id
+  , TagDetailInfo.created as TagDetailInfo__created
+  , null as tracking_code_parameter1
+  , null as tracking_code_parameter2
+  , null as tracking_code_parameter3
+  , null as tracking_code_parameter4
+  , null as tracking_code_parameter5
+  , null as tracking_code_parameter6
+  , null as tracking_code_parameter7
+  , null as tracking_code_parameter8
+  , null as tracking_code_parameter9
+  , null as tracking_code_parameter10
+  , null as ConversionPoint__id
+  , null as ConversionPoint__name
+  , CountHourlyAdsImg.min_date_impression as CountHourlyAdsImg__min_date_impression
+  , CountHourlyAdsImg.min_date_click as CountHourlyAdsImg__min_date_click
+  , CountHourlyAdsImg.cumulative_counts_impression as CountHourlyAdsImg__cumulative_counts_impression
+  , CountHourlyAdsImg.cumulative_counts_click as CountHourlyAdsImg__cumulative_counts_click
+  , CountHourlyAdsImg.cumulative_counts_impression_uu as CountHourlyAdsImg__cumulative_counts_impression_uu
+  , CountHourlyAdsImg.cumulative_counts_click_uu as CountHourlyAdsImg__cumulative_counts_click_uu
+  , CountHourlyAdsImg.daily_counts_impression as CountHourlyAdsImg__daily_counts_impression
+  , CountHourlyAdsImg.daily_counts_click as CountHourlyAdsImg__daily_counts_click
+  , CountHourlyAdsImg.daily_counts_impression_uu as CountHourlyAdsImg__daily_counts_impression_uu
+  , CountHourlyAdsImg.daily_counts_click_uu as CountHourlyAdsImg__daily_counts_click_uu
+  , CountHourlyAdsImg.max_datetime_impression as CountHourlyAdsImg__max_datetime_impression
+  , CountHourlyAdsImg.max_datetime_click as CountHourlyAdsImg__max_datetime_click
+  , CountHourlyAdsMov.min_date_impression as CountHourlyAdsMov__min_date_impression
+  , CountHourlyAdsMov.min_date_click as CountHourlyAdsMov__min_date_click
+  , CountHourlyAdsMov.min_date_0_percent as CountHourlyAdsMov__min_date_0_percent
+  , CountHourlyAdsMov.min_date_25_percent as CountHourlyAdsMov__min_date_25_percent
+  , CountHourlyAdsMov.min_date_50_percent as CountHourlyAdsMov__min_date_50_percent
+  , CountHourlyAdsMov.min_date_75_percent as CountHourlyAdsMov__min_date_75_percent
+  , CountHourlyAdsMov.min_date_100_percent as CountHourlyAdsMov__min_date_100_percent
+  , CountHourlyAdsMov.min_date_ctp as CountHourlyAdsMov__min_date_ctp
+  , CountHourlyAdsMov.min_date_skip as CountHourlyAdsMov__min_date_skip
+  , CountHourlyAdsMov.cumulative_counts_impression as CountHourlyAdsMov__cumulative_counts_impression
+  , CountHourlyAdsMov.cumulative_counts_click as CountHourlyAdsMov__cumulative_counts_click
+  , CountHourlyAdsMov.cumulative_counts_0_percent as CountHourlyAdsMov__cumulative_counts_0_percent
+  , CountHourlyAdsMov.cumulative_counts_25_percent as CountHourlyAdsMov__cumulative_counts_25_percent
+  , CountHourlyAdsMov.cumulative_counts_50_percent as CountHourlyAdsMov__cumulative_counts_50_percent
+  , CountHourlyAdsMov.cumulative_counts_75_percent as CountHourlyAdsMov__cumulative_counts_75_percent
+  , CountHourlyAdsMov.cumulative_counts_100_percent as CountHourlyAdsMov__cumulative_counts_100_percent
+  , CountHourlyAdsMov.cumulative_counts_ctp as CountHourlyAdsMov__cumulative_counts_ctp
+  , CountHourlyAdsMov.cumulative_counts_skip as CountHourlyAdsMov__cumulative_counts_skip
+  , CountHourlyAdsMov.cumulative_counts_impression_uu as CountHourlyAdsMov__cumulative_counts_impression_uu
+  , CountHourlyAdsMov.cumulative_counts_click_uu as CountHourlyAdsMov__cumulative_counts_click_uu
+  , CountHourlyAdsMov.cumulative_counts_0_percent_uu as CountHourlyAdsMov__cumulative_counts_0_percent_uu
+  , CountHourlyAdsMov.cumulative_counts_25_percent_uu as CountHourlyAdsMov__cumulative_counts_25_percent_uu
+  , CountHourlyAdsMov.cumulative_counts_50_percent_uu as CountHourlyAdsMov__cumulative_counts_50_percent_uu
+  , CountHourlyAdsMov.cumulative_counts_75_percent_uu as CountHourlyAdsMov__cumulative_counts_75_percent_uu
+  , CountHourlyAdsMov.cumulative_counts_100_percent_uu as CountHourlyAdsMov__cumulative_counts_100_percent_uu
+  , CountHourlyAdsMov.cumulative_counts_ctp_uu as CountHourlyAdsMov__cumulative_counts_ctp_uu
+  , CountHourlyAdsMov.cumulative_counts_skip_uu as CountHourlyAdsMov__cumulative_counts_skip_uu
+  , CountHourlyAdsMov.daily_counts_impression as CountHourlyAdsMov__daily_counts_impression
+  , CountHourlyAdsMov.daily_counts_click as CountHourlyAdsMov__daily_counts_click
+  , CountHourlyAdsMov.daily_counts_0_percent as CountHourlyAdsMov__daily_counts_0_percent
+  , CountHourlyAdsMov.daily_counts_25_percent as CountHourlyAdsMov__daily_counts_25_percent
+  , CountHourlyAdsMov.daily_counts_50_percent as CountHourlyAdsMov__daily_counts_50_percent
+  , CountHourlyAdsMov.daily_counts_75_percent as CountHourlyAdsMov__daily_counts_75_percent
+  , CountHourlyAdsMov.daily_counts_100_percent as CountHourlyAdsMov__daily_counts_100_percent
+  , CountHourlyAdsMov.daily_counts_ctp as CountHourlyAdsMov__daily_counts_ctp
+  , CountHourlyAdsMov.daily_counts_skip as CountHourlyAdsMov__daily_counts_skip
+  , CountHourlyAdsMov.daily_counts_impression_uu as CountHourlyAdsMov__daily_counts_impression_uu
+  , CountHourlyAdsMov.daily_counts_click_uu as CountHourlyAdsMov__daily_counts_click_uu
+  , CountHourlyAdsMov.daily_counts_0_percent_uu as CountHourlyAdsMov__daily_counts_0_percent_uu
+  , CountHourlyAdsMov.daily_counts_25_percent_uu as CountHourlyAdsMov__daily_counts_25_percent_uu
+  , CountHourlyAdsMov.daily_counts_50_percent_uu as CountHourlyAdsMov__daily_counts_50_percent_uu
+  , CountHourlyAdsMov.daily_counts_75_percent_uu as CountHourlyAdsMov__daily_counts_75_percent_uu
+  , CountHourlyAdsMov.daily_counts_100_percent_uu as CountHourlyAdsMov__daily_counts_100_percent_uu
+  , CountHourlyAdsMov.daily_counts_ctp_uu as CountHourlyAdsMov__daily_counts_ctp_uu
+  , CountHourlyAdsMov.daily_counts_skip_uu as CountHourlyAdsMov__daily_counts_skip_uu
+  , CountHourlyAdsMov.max_datetime_impression as CountHourlyAdsMov__max_datetime_impression
+  , CountHourlyAdsMov.max_datetime_click as CountHourlyAdsMov__max_datetime_click
+  , CountHourlyAdsMov.max_datetime_0_percent as CountHourlyAdsMov__max_datetime_0_percent
+  , CountHourlyAdsMov.max_datetime_25_percent as CountHourlyAdsMov__max_datetime_25_percent
+  , CountHourlyAdsMov.max_datetime_50_percent as CountHourlyAdsMov__max_datetime_50_percent
+  , CountHourlyAdsMov.max_datetime_75_percent as CountHourlyAdsMov__max_datetime_75_percent
+  , CountHourlyAdsMov.max_datetime_100_percent as CountHourlyAdsMov__max_datetime_100_percent
+  , CountHourlyAdsMov.max_datetime_ctp as CountHourlyAdsMov__max_datetime_ctp
+  , CountHourlyAdsMov.max_datetime_skip as CountHourlyAdsMov__max_datetime_skip
+  , CountHourlyAdsVis.min_date_impression as CountHourlyAdsVis__min_date_impression
+  , CountHourlyAdsVis.cumulative_counts_impression as CountHourlyAdsVis__cumulative_counts_impression
+  , CountHourlyAdsVis.cumulative_counts_impression_uu as CountHourlyAdsVis__cumulative_counts_impression_uu
+  , CountHourlyAdsVis.daily_counts_impression as CountHourlyAdsVis__daily_counts_impression
+  , CountHourlyAdsVis.daily_counts_impression_uu as CountHourlyAdsVis__daily_counts_impression_uu
+  , CountHourlyAdsVis.max_datetime_impression as CountHourlyAdsVis__max_datetime_impression
+  , null as CountHourlyWebsite__min_date_pv
+  , null as CountHourlyWebsite__cumulative_counts_pv
+  , null as CountHourlyWebsite__cumulative_counts_pv_uu
+  , null as CountHourlyWebsite__daily_counts_pv
+  , null as CountHourlyWebsite__daily_counts_pv_uu
+  , null as CountHourlyWebsite__max_datetime_pv 
+FROM
+  contracts_manage as ContractManage 
+  INNER JOIN tags_manage as TagManage 
+    ON ( 
+      ContractManage.deleted_flag = 0 
+      AND ContractManage.id = TagManage.contract_manage_id 
+      AND TagManage.delete_flg = 0
+    ) 
+  INNER JOIN service_category_larges as ServiceCategoryLarge 
+    ON ( 
+      ContractManage.service_category_large_id = ServiceCategoryLarge.service_category_large_id
+    ) 
+  INNER JOIN service_category_smalls as ServiceCategorySmall 
+    ON ( 
+      ContractManage.service_category_small_id = ServiceCategorySmall.service_category_small_id 
+      AND ServiceCategoryLarge.service_category_large_id = ServiceCategorySmall.service_category_large_id
+    ) 
+  INNER JOIN tag_extra_info as TagExtraInfo 
+    ON ( 
+      TagManage.id = TagExtraInfo.tag_manage_id 
+      AND ( 
+        TagExtraInfo.delete_flg = 0 
+        OR TagExtraInfo.delete_flg is null
+      )
+    ) 
+  INNER JOIN advertisements as TagDetailInfo 
+    ON ( 
+      TagManage.advertisement_id = TagDetailInfo.id 
+      AND TagDetailInfo.advertisement_type IN (1, 2, 5) 
+      AND TagDetailInfo.deleted_flag = 0 
+      AND TagManage.id = TagExtraInfo.tag_manage_id 
+      AND TagExtraInfo.measure_from_schedule >=  '2017-11-01' 
+      AND TagDetailInfo.expire <=  '2017-11-30'
+    ) 
+  LEFT JOIN ( 
+    SELECT
+      tagSubQuery2.id AS advertisement_id
+      , CONCAT( 
+        tagSubQuery2.tag_seed
+        ,  '-'
+        , SUBSTRING(MD5(tagSubQuery2.tag_base), 1, 1)
+        , SUBSTRING(MD5(tagSubQuery2.tag_base), - 1)
+      ) as tagid 
+    FROM
+      ( 
+        SELECT
+          tagSubQuery1.id
+          , CONCAT( 
+            tagSubQuery1.username
+            , "/"
+            , tagSubQuery1.tag_seed
+          ) as tag_base
+          , tagSubQuery1.tag_seed 
+        FROM
+          ( 
+            SELECT
+              advertisements.id
+              , accounts.username
+              , CONCAT( 
+                SUBSTRING( 
+                  DATE_FORMAT(advertisements.created,  '%s')
+                  , 1
+                  , 1
+                ) 
+                , LPAD(advertisements.id, 8,  '0')
+                , SUBSTRING( 
+                  DATE_FORMAT(advertisements.created,  '%s')
+                  , 2
+                  , 1
+                ) 
+                ,  '-'
+                , ( 
+                  CASE advertisement_type 
+                    WHEN 1 THEN  'img' 
+                    WHEN 2 THEN  'mov' 
+                    WHEN 5 THEN  'vis' 
+                    END
+                )
+              ) AS tag_seed 
+            FROM
+              advertisements 
+              INNER JOIN accounts 
+                ON ( 
+                  advertisements.client_id = accounts.client_id 
+                  AND accounts.client_representative_flag = 1 
+                  AND accounts.deleted_flag = 0
+                )
+          ) tagSubQuery1
+      ) tagSubQuery2
+  ) as AdvertisementTagId 
+    ON ( 
+      TagDetailInfo.id = AdvertisementTagId.advertisement_id
+    ) 
+  INNER JOIN tag_view_info as TagViewInfo 
+    ON ( 
+      TagManage.id = TagViewInfo.tag_manage_id 
+      AND ( 
+        (TagViewInfo.delete_flg = 0) 
+        OR (TagViewInfo.delete_flg is null)
+      ) 
+      AND ( 
+        ( 
+          ( 
+            (TagDetailInfo.advertisement_type IN (1, 2, 5)) 
+            AND ( 
+              ( 
+                (TagViewInfo.option_tag_type IS NULL) 
+                OR ( 
+                  ( 
+                    (substring(TagManage.disp_flag_list, 1, 1) = 1) 
+                    AND (TagViewInfo.option_tag_type = 1)
+                  )
+                )
+              )
+            )
+          )
+        ) 
+        OR ( 
+          ( 
+            (TagDetailInfo.advertisement_type = 2) 
+            AND ( 
+              ( 
+                ( 
+                  ( 
+                    (substring(TagManage.disp_flag_list, 3, 1) = 1) 
+                    AND (TagViewInfo.option_tag_type = 2)
+                  )
+                ) 
+                OR ( 
+                  ( 
+                    (substring(TagManage.disp_flag_list, 5, 1) = 1) 
+                    AND (TagViewInfo.option_tag_type = 3)
+                  )
+                ) 
+                OR ( 
+                  ( 
+                    (substring(TagManage.disp_flag_list, 7, 1) = 1) 
+                    AND (TagViewInfo.option_tag_type = 4)
+                  )
+                ) 
+                OR ( 
+                  ( 
+                    (substring(TagManage.disp_flag_list, 9, 1) = 1) 
+                    AND (TagViewInfo.option_tag_type = 5)
+                  )
+                ) 
+                OR ( 
+                  ( 
+                    (substring(TagManage.disp_flag_list, 11, 1) = 1) 
+                    AND (TagViewInfo.option_tag_type = 6)
+                  )
+                ) 
+                OR ( 
+                  ( 
+                    (substring(TagManage.disp_flag_list, 13, 1) = 1) 
+                    AND (TagViewInfo.option_tag_type = 7)
+                  )
+                ) 
+                OR ( 
+                  ( 
+                    (substring(TagManage.disp_flag_list, 15, 1) = 1) 
+                    AND (TagViewInfo.option_tag_type = 8)
+                  )
+                )
+              )
+            )
+          )
+        )
+      )
+    ) 
+  LEFT JOIN ( 
+    SELECT
+      CountHourlyAdsImg.advertisement_id
+      , MIN(CountHourlyAdsImg.min_date_impression) as min_date_impression
+      , MIN(CountHourlyAdsImg.min_date_click) as min_date_click
+      , SUM(CountHourlyAdsImg.count_impression) as cumulative_counts_impression
+      , SUM(CountHourlyAdsImg.count_click) as cumulative_counts_click
+      , 0 as cumulative_counts_impression_uu
+      , 0 as cumulative_counts_click_uu
+      , SUM( 
+        CASE 
+          WHEN DATE_FORMAT(CountHourlyAdsImg.target_ymdh,  '%Y-%m-%d') = DATE_FORMAT( '2017-11-30 16:00:00',  '%Y-%m-%d')
+            THEN CountHourlyAdsImg.count_impression 
+          ELSE 0 
+          END
+      ) as daily_counts_impression
+      , SUM( 
+        CASE 
+          WHEN DATE_FORMAT(CountHourlyAdsImg.target_ymdh,  '%Y-%m-%d') = DATE_FORMAT( '2017-11-30 16:00:00',  '%Y-%m-%d')
+            THEN CountHourlyAdsImg.count_click 
+          ELSE 0 
+          END
+      ) as daily_counts_click
+      , 0 as daily_counts_impression_uu
+      , 0 as daily_counts_click_uu
+      , MAX(CountHourlyAdsImg.max_datetime_impression) as max_datetime_impression
+      , MAX(CountHourlyAdsImg.max_datetime_click) as max_datetime_click 
+    FROM
+      count_hourly_ads_img as CountHourlyAdsImg 
+      INNER JOIN summary_master as SummaryMaster 
+        ON ( 
+          CountHourlyAdsImg.summary_date = SummaryMaster.summary_date 
+          AND CountHourlyAdsImg.exec_date = SummaryMaster.exec_date 
+          AND SummaryMaster.table_name =  'count_hourly_ads_img' 
+          AND SummaryMaster.enable_flg = 1
+        ) 
+    WHERE
+      CountHourlyAdsImg.target_ymdh <=  '2017-11-30 16:00:00' 
+    GROUP BY
+      CountHourlyAdsImg.advertisement_id
+  ) as CountHourlyAdsImg 
+    ON ( 
+      TagDetailInfo.advertisement_type = (1) 
+      AND TagDetailInfo.id = CountHourlyAdsImg.advertisement_id
+    ) 
+  LEFT JOIN ( 
+    SELECT
+      CountHourlyAdsMov.advertisement_id
+      , MIN(CountHourlyAdsMov.min_date_impression) as min_date_impression
+      , MIN(CountHourlyAdsMov.min_date_click) as min_date_click
+      , MIN(CountHourlyAdsMov.min_date_0_percent) as min_date_0_percent
+      , MIN(CountHourlyAdsMov.min_date_25_percent) as min_date_25_percent
+      , MIN(CountHourlyAdsMov.min_date_50_percent) as min_date_50_percent
+      , MIN(CountHourlyAdsMov.min_date_75_percent) as min_date_75_percent
+      , MIN(CountHourlyAdsMov.min_date_100_percent) as min_date_100_percent
+      , MIN(CountHourlyAdsMov.min_date_ctp) as min_date_ctp
+      , MIN(CountHourlyAdsMov.min_date_skip) as min_date_skip
+      , SUM(CountHourlyAdsMov.count_impression) as cumulative_counts_impression
+      , SUM(CountHourlyAdsMov.count_click) as cumulative_counts_click
+      , SUM(CountHourlyAdsMov.count_0_percent) as cumulative_counts_0_percent
+      , SUM(CountHourlyAdsMov.count_25_percent) as cumulative_counts_25_percent
+      , SUM(CountHourlyAdsMov.count_50_percent) as cumulative_counts_50_percent
+      , SUM(CountHourlyAdsMov.count_75_percent) as cumulative_counts_75_percent
+      , SUM(CountHourlyAdsMov.count_100_percent) as cumulative_counts_100_percent
+      , SUM(CountHourlyAdsMov.count_ctp) as cumulative_counts_ctp
+      , SUM(CountHourlyAdsMov.count_skip) as cumulative_counts_skip
+      , 0 as cumulative_counts_impression_uu
+      , 0 as cumulative_counts_click_uu
+      , 0 as cumulative_counts_0_percent_uu
+      , 0 as cumulative_counts_25_percent_uu
+      , 0 as cumulative_counts_50_percent_uu
+      , 0 as cumulative_counts_75_percent_uu
+      , 0 as cumulative_counts_100_percent_uu
+      , 0 as cumulative_counts_ctp_uu
+      , 0 as cumulative_counts_skip_uu
+      , SUM( 
+        CASE 
+          WHEN DATE_FORMAT(CountHourlyAdsMov.target_ymdh,  '%Y-%m-%d') = DATE_FORMAT( '2017-11-30 16:00:00',  '%Y-%m-%d')
+            THEN CountHourlyAdsMov.count_impression 
+          ELSE 0 
+          END
+      ) as daily_counts_impression
+      , SUM( 
+        CASE 
+          WHEN DATE_FORMAT(CountHourlyAdsMov.target_ymdh,  '%Y-%m-%d') = DATE_FORMAT( '2017-11-30 16:00:00',  '%Y-%m-%d')
+            THEN CountHourlyAdsMov.count_click 
+          ELSE 0 
+          END
+      ) as daily_counts_click
+      , SUM( 
+        CASE 
+          WHEN DATE_FORMAT(CountHourlyAdsMov.target_ymdh,  '%Y-%m-%d') = DATE_FORMAT( '2017-11-30 16:00:00',  '%Y-%m-%d')
+            THEN CountHourlyAdsMov.count_0_percent 
+          ELSE 0 
+          END
+      ) as daily_counts_0_percent
+      , SUM( 
+        CASE 
+          WHEN DATE_FORMAT(CountHourlyAdsMov.target_ymdh,  '%Y-%m-%d') = DATE_FORMAT( '2017-11-30 16:00:00',  '%Y-%m-%d')
+            THEN CountHourlyAdsMov.count_25_percent 
+          ELSE 0 
+          END
+      ) as daily_counts_25_percent
+      , SUM( 
+        CASE 
+          WHEN DATE_FORMAT(CountHourlyAdsMov.target_ymdh,  '%Y-%m-%d') = DATE_FORMAT( '2017-11-30 16:00:00',  '%Y-%m-%d')
+            THEN CountHourlyAdsMov.count_50_percent 
+          ELSE 0 
+          END
+      ) as daily_counts_50_percent
+      , SUM( 
+        CASE 
+          WHEN DATE_FORMAT(CountHourlyAdsMov.target_ymdh,  '%Y-%m-%d') = DATE_FORMAT( '2017-11-30 16:00:00',  '%Y-%m-%d')
+            THEN CountHourlyAdsMov.count_75_percent 
+          ELSE 0 
+          END
+      ) as daily_counts_75_percent
+      , SUM( 
+        CASE 
+          WHEN DATE_FORMAT(CountHourlyAdsMov.target_ymdh,  '%Y-%m-%d') = DATE_FORMAT( '2017-11-30 16:00:00',  '%Y-%m-%d')
+            THEN CountHourlyAdsMov.count_100_percent 
+          ELSE 0 
+          END
+      ) as daily_counts_100_percent
+      , SUM( 
+        CASE 
+          WHEN DATE_FORMAT(CountHourlyAdsMov.target_ymdh,  '%Y-%m-%d') = DATE_FORMAT( '2017-11-30 16:00:00',  '%Y-%m-%d')
+            THEN CountHourlyAdsMov.count_ctp 
+          ELSE 0 
+          END
+      ) as daily_counts_ctp
+      , SUM( 
+        CASE 
+          WHEN DATE_FORMAT(CountHourlyAdsMov.target_ymdh,  '%Y-%m-%d') = DATE_FORMAT( '2017-11-30 16:00:00',  '%Y-%m-%d')
+            THEN CountHourlyAdsMov.count_skip 
+          ELSE 0 
+          END
+      ) as daily_counts_skip
+      , 0 as daily_counts_impression_uu
+      , 0 as daily_counts_click_uu
+      , 0 as daily_counts_0_percent_uu
+      , 0 as daily_counts_25_percent_uu
+      , 0 as daily_counts_50_percent_uu
+      , 0 as daily_counts_75_percent_uu
+      , 0 as daily_counts_100_percent_uu
+      , 0 as daily_counts_ctp_uu
+      , 0 as daily_counts_skip_uu
+      , MAX(CountHourlyAdsMov.max_datetime_impression) as max_datetime_impression
+      , MAX(CountHourlyAdsMov.max_datetime_click) as max_datetime_click
+      , MAX(CountHourlyAdsMov.max_datetime_0_percent) as max_datetime_0_percent
+      , MAX(CountHourlyAdsMov.max_datetime_25_percent) as max_datetime_25_percent
+      , MAX(CountHourlyAdsMov.max_datetime_50_percent) as max_datetime_50_percent
+      , MAX(CountHourlyAdsMov.max_datetime_75_percent) as max_datetime_75_percent
+      , MAX(CountHourlyAdsMov.max_datetime_100_percent) as max_datetime_100_percent
+      , MAX(CountHourlyAdsMov.max_datetime_ctp) as max_datetime_ctp
+      , MAX(CountHourlyAdsMov.max_datetime_skip) as max_datetime_skip 
+    FROM
+      count_hourly_ads_mov as CountHourlyAdsMov 
+      INNER JOIN summary_master as SummaryMaster 
+        ON ( 
+          CountHourlyAdsMov.summary_date = SummaryMaster.summary_date 
+          AND CountHourlyAdsMov.exec_date = SummaryMaster.exec_date 
+          AND SummaryMaster.table_name =  'count_hourly_ads_mov' 
+          AND SummaryMaster.enable_flg = 1
+        ) 
+    WHERE
+      CountHourlyAdsMov.target_ymdh <=  '2017-11-30 16:00:00' 
+    GROUP BY
+      CountHourlyAdsMov.advertisement_id
+  ) as CountHourlyAdsMov 
+    ON ( 
+      TagDetailInfo.advertisement_type = 2 
+      AND TagDetailInfo.id = CountHourlyAdsMov.advertisement_id
+    ) 
+  LEFT JOIN ( 
+    SELECT
+      CountHourlyAdsVis.advertisement_id
+      , MIN(CountHourlyAdsVis.min_date_impression) as min_date_impression
+      , SUM(CountHourlyAdsVis.count_impression) as cumulative_counts_impression
+      , 0 as cumulative_counts_impression_uu
+      , SUM( 
+        CASE 
+          WHEN DATE_FORMAT(CountHourlyAdsVis.target_ymdh,  '%Y-%m-%d') = DATE_FORMAT( '2017-11-30 16:00:00',  '%Y-%m-%d')
+            THEN CountHourlyAdsVis.count_impression 
+          ELSE 0 
+          END
+      ) as daily_counts_impression
+      , 0 as daily_counts_impression_uu
+      , MAX(CountHourlyAdsVis.max_datetime_impression) as max_datetime_impression 
+    FROM
+      count_hourly_ads_vis as CountHourlyAdsVis 
+      INNER JOIN summary_master as SummaryMaster 
+        ON ( 
+          CountHourlyAdsVis.summary_date = SummaryMaster.summary_date 
+          AND CountHourlyAdsVis.exec_date = SummaryMaster.exec_date 
+          AND SummaryMaster.table_name = \ 'count_hourly_ads_vis\' 
+          AND SummaryMaster.enable_flg = 1
+        ) 
+    WHERE
+      CountHourlyAdsVis.target_ymdh <= \ '2017-11-30 16:00:00\' 
+    GROUP BY
+      CountHourlyAdsVis.advertisement_id
+  ) as CountHourlyAdsVis 
+    ON ( 
+      TagDetailInfo.advertisement_type = 5 
+      AND TagDetailInfo.id = CountHourlyAdsVis.advertisement_id
+    ) 
+WHERE
+  ( 
+    (TagViewInfo.option_tag_type IS NULL) 
+    OR ( 
+      TagViewInfo.option_tag_type IN (1, 2, 3, 4, 5, 6, 7, 8)
+    )
+  ) 
+UNION ALL 
+SELECT
+  ContractManage.id as ContractManage__id
+  , ContractManage.contract_id as ContractManage__contract_id
+  , ContractManage.contract_name as ContractManage__contract_name
+  , ContractManage.client_id as ContractManage__client_id
+  , ContractManage.service_category_large_id as ContractManage__service_category_large_id
+  , ContractManage.service_category_small_id as ContractManage__service_category_small_id
+  , ContractManage.sales_person_name as ContractManage__sales_person_name
+  , ContractManage.operate_person_name as ContractManage__operate_person_name
+  , ContractManage.note as ContractManage__note
+  , ContractManage.created as ContractManage__created
+  , ServiceCategoryLarge.service_category_large_id as ServiceCategoryLarge__service_category_large_id
+  , ServiceCategoryLarge.service_category_large_name as ServiceCategoryLarge__service_category_large_name
+  , ServiceCategorySmall.service_category_large_id as ServiceCategorySmall__service_category_large_id
+  , ServiceCategorySmall.service_category_small_id as ServiceCategorySmall__service_category_small_id
+  , ServiceCategorySmall.service_category_small_name as ServiceCategorySmall__service_category_small_name
+  , AdvertisementTagId.tagid
+  , TagManage.id as TagManage__id
+  , TagManage.contract_manage_id as TagManage__contract_manage_id
+  , TagManage.tag_no as TagManage__tag_no
+  , TagManage.tag_name as TagManage__tag_name
+  , TagManage.disp_flag_list as TagManage__disp_flag_list
+  , TagManage.advertisement_id as TagManage__advertisement_id
+  , TagManage.website_id as TagManage__website_id
+  , DATE_FORMAT(TagManage.created, \ '%Y-%m-%d\') as TagManage__created
+  , TagExtraInfo.id as TagExtraInfo__id
+  , TagExtraInfo.tag_manage_id as TagExtraInfo__tag_manage_id
+  , TagExtraInfo.measure_from_schedule as TagExtraInfo__measure_from_schedule
+  , TagExtraInfo.distribution_start_time as TagExtraInfo__distribution_start_time
+  , TagExtraInfo.measure_to_schedule as TagExtraInfo__measure_to_schedule
+  , TagExtraInfo.device as TagExtraInfo__device
+  , TagExtraInfo.supposition_impression as TagExtraInfo__supposition_impression
+  , TagExtraInfo.media_flg as TagExtraInfo__media_flg
+  , TagExtraInfo.media as TagExtraInfo__media
+  , TagExtraInfo.targeting_flg as TagExtraInfo__targeting_flg
+  , TagExtraInfo.targeting as TagExtraInfo__targeting
+  , TagExtraInfo.frequency_flg as TagExtraInfo__frequency_flg
+  , TagExtraInfo.frequency as TagExtraInfo__frequency
+  , TagExtraInfo.playback_mode as TagExtraInfo__playback_mode
+  , TagExtraInfo.cm_publish as TagExtraInfo__cm_publish
+  , TagExtraInfo.cm_grp as TagExtraInfo__cm_grp
+  , TagExtraInfo.cm_creative as TagExtraInfo__cm_creative
+  , TagExtraInfo.cm_info as TagExtraInfo__cm_info
+  , TagExtraInfo.cm_from_schedule as TagExtraInfo__cm_from_schedule
+  , TagExtraInfo.cm_to_schedule as TagExtraInfo__cm_to_schedule
+  , TagExtraInfo.memo as TagExtraInfo__memo
+  , TagViewInfo.id as TagViewInfo__id
+  , TagViewInfo.tag_manage_id as TagViewInfo__tag_manage_id
+  , TagViewInfo.option_tag_type as TagViewInfo__option_tag_type
+  , TagDetailInfo.id as TagDetailInfo__id
+  , TagDetailInfo.client_id as TagDetailInfo__client_id
+  , TagDetailInfo.name as TagDetailInfo__name
+  , TagDetailInfo.fqdn as TagDetailInfo__fqdn
+  , null as landing_url
+  , TagDetailInfo.enabled_flag as TagDetailInfo__enabled_flag
+  , TagDetailInfo.be_testmoded as TagDetailInfo__be_testmoded
+  , null as visit_time
+  , TagDetailInfo.finish_date as stop_measure_date
+  , - 1 as TagType
+  , TagDetailInfo.impression_limit as impression_limit
+  , null as duration
+  , null as website_id
+  , TagDetailInfo.created as TagDetailInfo__created
+  , TagDetailInfo.tracking_code_parameter1 as tracking_code_parameter1
+  , TagDetailInfo.tracking_code_parameter2 as tracking_code_parameter2
+  , TagDetailInfo.tracking_code_parameter3 as tracking_code_parameter3
+  , TagDetailInfo.tracking_code_parameter4 as tracking_code_parameter4
+  , TagDetailInfo.tracking_code_parameter5 as tracking_code_parameter5
+  , TagDetailInfo.tracking_code_parameter6 as tracking_code_parameter6
+  , TagDetailInfo.tracking_code_parameter7 as tracking_code_parameter7
+  , TagDetailInfo.tracking_code_parameter8 as tracking_code_parameter8
+  , TagDetailInfo.tracking_code_parameter9 as tracking_code_parameter9
+  , TagDetailInfo.tracking_code_parameter10 as tracking_code_parameter10
+  , ConversionPoint.id as ConversionPoint__id
+  , ConversionPoint.name as ConversionPoint__name
+  , null as CountHourlyAdsImg__min_date_impression
+  , null as CountHourlyAdsImg__min_date_click
+  , null as CountHourlyAdsImg__cumulative_counts_impression
+  , null as CountHourlyAdsImg__cumulative_counts_click
+  , null as CountHourlyAdsImg__cumulative_counts_impression_uu
+  , null as CountHourlyAdsImg__cumulative_counts_click_uu
+  , null as CountHourlyAdsImg__daily_counts_impression
+  , null as CountHourlyAdsImg__daily_counts_click
+  , null as CountHourlyAdsImg__daily_counts_impression_uu
+  , null as CountHourlyAdsImg__daily_counts_click_uu
+  , null as CountHourlyAdsImg__max_datetime_impression
+  , null as CountHourlyAdsImg__max_datetime_click
+  , null as CountHourlyAdsMov__min_date_impression
+  , null as CountHourlyAdsMov__min_date_click
+  , null as CountHourlyAdsMov__min_date_0_percent
+  , null as CountHourlyAdsMov__min_date_25_percent
+  , null as CountHourlyAdsMov__min_date_50_percent
+  , null as CountHourlyAdsMov__min_date_75_percent
+  , null as CountHourlyAdsMov__min_date_100_percent
+  , null as CountHourlyAdsMov__min_date_ctp
+  , null as CountHourlyAdsMov__min_date_skip
+  , null as CountHourlyAdsMov__cumulative_counts_impression
+  , null as CountHourlyAdsMov__cumulative_counts_click
+  , null as CountHourlyAdsMov__cumulative_counts_0_percent
+  , null as CountHourlyAdsMov__cumulative_counts_25_percent
+  , null as CountHourlyAdsMov__cumulative_counts_50_percent
+  , null as CountHourlyAdsMov__cumulative_counts_75_percent
+  , null as CountHourlyAdsMov__cumulative_counts_100_percent
+  , null as CountHourlyAdsMov__cumulative_counts_ctp
+  , null as CountHourlyAdsMov__cumulative_counts_skip
+  , null as CountHourlyAdsMov__cumulative_counts_impression_uu
+  , null as CountHourlyAdsMov__cumulative_counts_click_uu
+  , null as CountHourlyAdsMov__cumulative_counts_0_percent_uu
+  , null as CountHourlyAdsMov__cumulative_counts_25_percent_uu
+  , null as CountHourlyAdsMov__cumulative_counts_50_percent_uu
+  , null as CountHourlyAdsMov__cumulative_counts_75_percent_uu
+  , null as CountHourlyAdsMov__cumulative_counts_100_percent_uu
+  , null as CountHourlyAdsMov__cumulative_counts_ctp_uu
+  , null as CountHourlyAdsMov__cumulative_counts_skip_uu
+  , null as CountHourlyAdsMov__daily_counts_impression
+  , null as CountHourlyAdsMov__daily_counts_click
+  , null as CountHourlyAdsMov__daily_counts_0_percent
+  , null as CountHourlyAdsMov__daily_counts_25_percent
+  , null as CountHourlyAdsMov__daily_counts_50_percent
+  , null as CountHourlyAdsMov__daily_counts_75_percent
+  , null as CountHourlyAdsMov__daily_counts_100_percent
+  , null as CountHourlyAdsMov__daily_counts_ctp
+  , null as CountHourlyAdsMov__daily_counts_skip
+  , null as CountHourlyAdsMov__daily_counts_impression_uu
+  , null as CountHourlyAdsMov__daily_counts_click_uu
+  , null as CountHourlyAdsMov__daily_counts_0_percent_uu
+  , null as CountHourlyAdsMov__daily_counts_25_percent_uu
+  , null as CountHourlyAdsMov__daily_counts_50_percent_uu
+  , null as CountHourlyAdsMov__daily_counts_75_percent_uu
+  , null as CountHourlyAdsMov__daily_counts_100_percent_uu
+  , null as CountHourlyAdsMov__daily_counts_ctp_uu
+  , null as CountHourlyAdsMov__daily_counts_skip_uu
+  , null as CountHourlyAdsMov__max_datetime_impression
+  , null as CountHourlyAdsMov__max_datetime_click
+  , null as CountHourlyAdsMov__max_datetime_0_percent
+  , null as CountHourlyAdsMov__max_datetime_25_percent
+  , null as CountHourlyAdsMov__max_datetime_50_percent
+  , null as CountHourlyAdsMov__max_datetime_75_percent
+  , null as CountHourlyAdsMov__max_datetime_100_percent
+  , null as CountHourlyAdsMov__max_datetime_ctp
+  , null as CountHourlyAdsMov__max_datetime_skip
+  , null as CountHourlyAdsVis__min_date_impression
+  , null as CountHourlyAdsVis__cumulative_counts_impression
+  , null as CountHourlyAdsVis__cumulative_counts_impression_uu
+  , null as CountHourlyAdsVis__daily_counts_impression
+  , null as CountHourlyAdsVis__daily_counts_impression_uu
+  , null as CountHourlyAdsVis__max_datetime_impression
+  , CountHourlyWebsite.min_date_pv as CountHourlyWebsite__min_date_pv
+  , CountHourlyWebsite.cumulative_counts_pv as CountHourlyWebsite__cumulative_counts_pv
+  , CountHourlyWebsite.cumulative_counts_pv_uu as CountHourlyWebsite__cumulative_counts_pv_uu
+  , CountHourlyWebsite.daily_counts_pv as CountHourlyWebsite__daily_counts_pv
+  , CountHourlyWebsite.daily_counts_pv_uu as CountHourlyWebsite__daily_counts_pv_uu
+  , CountHourlyWebsite.max_datetime_pv as CountHourlyWebsite__max_datetime_pv 
+FROM
+  contracts_manage as ContractManage 
+  INNER JOIN tags_manage as TagManage 
+    ON ( 
+      ContractManage.deleted_flag = 0 
+      AND ContractManage.id = TagManage.contract_manage_id 
+      AND TagManage.delete_flg = 0
+    ) 
+  INNER JOIN service_category_larges as ServiceCategoryLarge 
+    ON ( 
+      ContractManage.service_category_large_id = ServiceCategoryLarge.service_category_large_id
+    ) 
+  INNER JOIN service_category_smalls as ServiceCategorySmall 
+    ON ( 
+      ContractManage.service_category_small_id = ServiceCategorySmall.service_category_small_id 
+      AND ServiceCategoryLarge.service_category_large_id = ServiceCategorySmall.service_category_large_id
+    ) 
+  INNER JOIN tag_extra_info as TagExtraInfo 
+    ON ( 
+      TagManage.id = TagExtraInfo.tag_manage_id 
+      AND ( 
+        TagExtraInfo.delete_flg = 0 
+        OR TagExtraInfo.delete_flg is null
+      )
+    ) 
+  INNER JOIN websites as TagDetailInfo 
+    ON ( 
+      TagManage.website_id = TagDetailInfo.id 
+      AND TagDetailInfo.deleted_flag = 0 
+      AND TagManage.id = TagExtraInfo.tag_manage_id 
+      AND TagExtraInfo.measure_from_schedule >= \ '2017-11-01\' 
+      AND TagDetailInfo.finish_date <= \ '2017-11-30\'
+    ) 
+  LEFT JOIN ( 
+    SELECT
+      tagSubQuery2.id AS website_id
+      , CONCAT( 
+        tagSubQuery2.tag_seed
+        , \ '-\'
+        , SUBSTRING(MD5(tagSubQuery2.tag_base), 1, 1)
+        , SUBSTRING(MD5(tagSubQuery2.tag_base), - 1)
+      ) as tagid 
+    FROM
+      ( 
+        SELECT
+          tagSubQuery1.id
+          , CONCAT( 
+            tagSubQuery1.username
+            , "/"
+            , tagSubQuery1.tag_seed
+          ) as tag_base
+          , tagSubQuery1.tag_seed 
+        FROM
+          ( 
+            SELECT
+              websites.id
+              , accounts.username
+              , CONCAT( 
+                SUBSTRING(DATE_FORMAT(websites.created, \ '%s\'), 1, 1)
+                , LPAD(websites.id, 8, \ '0\')
+                , SUBSTRING(DATE_FORMAT(websites.created, \ '%s\'), 2, 1)
+              ) AS tag_seed 
+            FROM
+              websites 
+              INNER JOIN accounts 
+                ON ( 
+                  websites.client_id = accounts.client_id 
+                  AND accounts.client_representative_flag = 1 
+                  AND accounts.deleted_flag = 0
+                )
+          ) tagSubQuery1
+      ) tagSubQuery2
+  ) as AdvertisementTagId 
+    ON ( 
+      TagDetailInfo.id = AdvertisementTagId.website_id
+    ) 
+  INNER JOIN tag_view_info as TagViewInfo 
+    ON ( 
+      TagManage.id = TagViewInfo.tag_manage_id 
+      AND ( 
+        (TagViewInfo.delete_flg = 0) 
+        OR (TagViewInfo.delete_flg is null)
+      ) 
+      AND TagViewInfo.option_tag_type is null
+    ) 
+  LEFT JOIN ( 
+    SELECT
+      CountHourlyWebsite.website_id
+      , MIN(CountHourlyWebsite.min_date_pv) as min_date_pv
+      , SUM(CountHourlyWebsite.count_pv) as cumulative_counts_pv
+      , 0 as cumulative_counts_pv_uu
+      , SUM( 
+        CASE 
+          WHEN DATE_FORMAT(CountHourlyWebsite.target_ymdh, \ '%Y-%m-%d\') = DATE_FORMAT(\ '2017-11-30 16:00:00\', \ '%Y-%m-%d\')
+            THEN CountHourlyWebsite.count_pv 
+          ELSE 0 
+          END
+      ) as daily_counts_pv
+      , 0 as daily_counts_pv_uu
+      , MAX(CountHourlyWebsite.max_datetime_pv) as max_datetime_pv 
+    FROM
+      count_hourly_website as CountHourlyWebsite 
+      INNER JOIN summary_master as SummaryMaster 
+        ON ( 
+          CountHourlyWebsite.summary_date = SummaryMaster.summary_date 
+          AND CountHourlyWebsite.exec_date = SummaryMaster.exec_date 
+          AND SummaryMaster.table_name = \ 'count_hourly_website\' 
+          AND SummaryMaster.enable_flg = 1
+        ) 
+    WHERE
+      CountHourlyWebsite.target_ymdh <= \ '2017-11-30 16:00:00\' 
+    GROUP BY
+      CountHourlyWebsite.website_id
+  ) as CountHourlyWebsite 
+    ON ( 
+      TagDetailInfo.id = CountHourlyWebsite.website_id
+    ) 
+  INNER JOIN conversion_points as ConversionPoint 
+    ON ( 
+      TagDetailInfo.id = ConversionPoint.website_id 
+      AND ConversionPoint.index = 1
+    ); 
+
+'  

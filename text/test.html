@@ -1,0 +1,37 @@
+<html>
+<head>
+<meta charset="utf-8"/>
+</head>
+<body>
+
+<form name="test">
+<input type="file" id="selfile"><br>
+<textarea name="txt" rows="10" cols="50" readonly></textarea>
+</form>
+
+<script>
+var obj1 = document.getElementById("selfile");
+
+obj1.addEventListener("change",function(evt){
+
+  var file = evt.target.files;
+
+  var reader = new FileReader();
+
+  reader.readAsText(file[0],);
+  
+  reader.onload = function(ev){
+  	var rsl = reader.result;
+  	rsl = rsl.replace(/"/g,"");
+	rsl = rsl.replace(/[\r?\n]/g,"");
+	rsl = rsl.replace(/msgid/g,"\n");
+	rsl = rsl.replace(/msgstr/g,",");
+    document.test.txt.value = rsl;
+  }
+},false);
+</script>
+
+
+
+</body>
+</html>

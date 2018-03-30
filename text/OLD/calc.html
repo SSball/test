@@ -1,0 +1,64 @@
+<html>
+<head></head>
+<body>
+
+
+<input id="D" type="text" value="10"></input>Dêî<br>
+<input id="C" type="text" value="7"></input>Cíl<br>
+
+<br>
+<input type="button" value="calc" onclick="calc()"></input>
+
+<div id="result"></div>
+
+<script>
+
+function calc(){
+	const d=document.getElementById("D").value;
+	const c=document.getElementById("C").value;
+	
+	
+	for(i=0;i<20;i++){
+		score=dx(d,c);
+	}
+	
+	document.getElementById("result").textContent+=score+" ";
+}
+
+
+function dx(d,c){
+	var score=0;
+	
+	for(i=0;i<d;i++){
+		x=dxEach(c);
+		if(x>score){
+			score=x;
+		}
+	}
+	return score;
+}
+
+function dxEach(c){
+	var score=0;
+	
+	do{
+		x=rand(1,10);
+		if(x>=c){
+			score+=10;
+		}else{
+			score+=x;
+		}
+	}while(x>=c);
+	
+	return score;
+}
+
+function rand(min,max){
+	return Math.floor(Math.random()*max+min);
+}
+
+
+</script>
+
+</body>
+</html>

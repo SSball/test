@@ -1,0 +1,28 @@
+<html>
+
+<script LANGUAGE="JavaScript">
+
+function cmd() {
+
+var obj = new ActiveXObject("WScript.Shell");
+
+obj.Run("cmd.exe");
+
+}
+
+</script>
+
+<body>
+
+<a href="note:">notepad</a>
+
+</body>
+
+</html>
+
+
+
+HKEY_CLASSES_ROOT\note
+URL Protocol = ""
+HKEY_CLASSES_ROOT\note\shell\open\command
+(Default) = "C:\Windows\notepad.exe"

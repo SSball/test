@@ -1,0 +1,52 @@
+2018-01-12T08:54:03Z aon: --START--
+2018-01-12T08:54:03Z aon: 	os: 0x6011db1
+2018-01-12T08:54:03Z aon: 	version: 2.2.7
+2018-01-12T08:54:03Z aon: 	revision: 45883
+2018-01-12T08:54:03Z aon: 	path: /branches/isl_alwayson_2_2_2/ISLAlwaysOn
+2018-01-12T08:54:03Z aon: 	cwd: C:\Users\noda_c\Desktop\text
+2018-01-12T08:54:03Z aon: 	pid: 7184
+2018-01-12T08:54:03Z aon_utils: product: ISLAlwaysOn, root: C:\Program Files (x86)\ISL Online\ISL AlwaysOn
+2018-01-12T08:54:03Z system locale (win): GetUserDefaultLCID() = 0x411, langid = 0x411, primary = 0x11, sub = 0x1
+2018-01-12T08:54:03Z system locale (win): matching language from list: [ar, bg, ca, cs, da, de, en, es, fr, he, hi, hr, it, ja, nl, pl, ptbr, pt, ro, ru, sl, sr, srl, zh, zhs]
+2018-01-12T08:54:03Z system locale (win): ... ok, match found: ja
+2018-01-12T08:54:03Z aon_main::main_gui: checked args silent=0 clean=0 overview=0
+2018-01-12T08:54:03Z ipc_priv::init_ipc_client: pipe \\?\pipe\ipc3_1_ISLAlwaysOn error1: 0x2
+2018-01-12T08:54:03Z ipc_priv::init_ipc_server: new pipe \\?\pipe\ipc3_1_ISLAlwaysOn (000002B4) 0
+2018-01-12T08:54:03Z aon_main::main_gui: created IPC 044EB760
+2018-01-12T08:54:03Z hefa::ipc::run: pipe loop
+2018-01-12T08:54:03Z aon_main::main_gui: creating gui
+2018-01-12T08:54:03Z qt: Warning: libpng warning: Interlace handling should be turned on when using png_read_image
+2018-01-12T08:54:03Z qt: Warning: QString::arg: Argument missing: helpdesk, ISL Online Network
+2018-01-12T08:54:03Z parse_filter: checking 
+2018-01-12T08:54:03Z aon_connection_set: rebuild_reg_connections 0 - count 1
+2018-01-12T08:54:03Z aon_connection: added new connecttion 0-Grid\ISL Online Network
+2018-01-12T08:54:03Z aon_connection_set: registering 1 - 440ccc15795318ce2a2ac181b5fe49e75e505b16fb7026ed5f0d36e0daaf9b58edaebca8e21206c7aad4d839166825755c61513eb02931df969a06c4d37f3283_ISL Online Network_ in connections
+2018-01-12T08:54:03Z aon_connection_set: ipcCommand share
+2018-01-12T08:54:03Z qt: Warning: QString::arg: Argument missing: helpdesk, ISL Online Network
+2018-01-12T08:54:04Z aon_connection: check_connect2 1
+2018-01-12T08:54:04Z aon_connection: connect rpc_null=1
+2018-01-12T08:54:04Z control_rpc: starting new connection thread to 0 - Grid\ISL Online Network
+2018-01-12T08:54:04Z control_rpc: before new control_rpc
+2018-01-12T08:54:04Z control_rpc: creating server connect thread...
+2018-01-12T08:54:04Z control_rpc: creating new thread pool...
+2018-01-12T08:54:04Z control_rpc: executing on thread pool...
+2018-01-12T08:54:04Z aon_connection: check_connect2 1
+2018-01-12T08:54:04Z aon_connection: connect rpc_null=0
+2018-01-12T08:54:04Z mux: requesting new server: alwayson-*.islonline.net
+2018-01-12T08:54:04Z mux: new server connection to alwayson-*.islonline.net on 1 append s_
+2018-01-12T08:54:04Z mux: starting new connection to alwayson-*.islonline.net (this=70746496)
+2018-01-12T08:54:04Z mux: try 1
+2018-01-12T08:54:04Z AutoTransport: added [:7615] to destination
+2018-01-12T08:54:04Z AutoTransport: destination: [alwayson-*.islonline.net:7615]
+2018-01-12T08:54:04Z AutoTransport: original destination: []
+2018-01-12T08:54:04Z AutoTransport: destination address was set to [alwayson-taratcg.islonline.net]
+2018-01-12T08:54:04Z AutoTransport: connection list: [alwayson-taratcg.islonline.net]
+2018-01-12T08:54:04Z AutoTransport: direct ports: [7615], HTTP=true, HTTPS=true
+2018-01-12T08:54:04Z AutoTransport: HTTP tunnel port: 80, HTTPS tunnel port: 443
+2018-01-12T08:54:04Z AutoTransport: initialized
+2018-01-12T08:54:04Z AutoTransport: trying to get a transport (20 secs timeout)
+2018-01-12T08:54:04Z AutoTransport: TCP connection to alwayson-taratcg.islonline.net:7615 (1000)
+2018-01-12T08:54:04Z NetMT WSA win32: GetAddrInfoW node=[alwayson-taratcg.islonline.net] service=7615 hints={ai_flags=0x0,ai_family=AF_UNSPEC,ai_socktype=SOCK_STREAM,ai_protocol=IPPROTO_TCP,ai_canonname=[],ai_addr={}}
+2018-01-12T08:54:04Z NetMT WSA win32: ... {ai_flags=0x0,ai_family=AF_INET,ai_socktype=SOCK_STREAM,ai_protocol=IPPROTO_TCP,ai_canonname=[],ai_addr={ss_family=AF_INET,sin_addr=13.56.67.38,sin_port=7615}}
+2018-01-12T08:54:04Z NetMT WSA win32: WSAConnect name={ss_family=AF_INET,sin_addr=13.56.67.38,sin_port=7615}
+2018-01-12T08:54:06Z hefa::ipc::run: exiting pipe loop
