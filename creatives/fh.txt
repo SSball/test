@@ -1,0 +1,945 @@
+/vagrant/app/Console/cake bake fixture -app /vagrant/app -r
+
+DashboardManage
+DashboardReachDatasource
+DashboardResearchDatasource
+DashboardGraph
+DashboardReport
+
+DashboardItem:#98169にて対応済
+
+
+
+刑部さん
+以下にリサーチデータソース画面のバリデーション用ロジックを作成したので、ご確認をお願いいたします。
+https://github.com/macromilldev/adplat/pull/3196
+
+
+
+https://github.com/macromilldev/adplat/compare/develop...feature/tix109085_dashboard_validation
+
+ダッシュボード登録・編集
+:DashbaordLogicComponent
+->comp
+
+リーチデータソース設定
+:DashboardReachDatasourceLogicComponent
+->comp　追記待ち
+
+リサーチデータソース設定
+:DashboardResearchDatasourceLogicComponent
+
+レポート設定系
+:DashboardReportLogicComponent
+
+グラフ設定系
+:DashboardGraphLogicComponent
+
+188
+// バリデーションするデータを設定
+        $searchData ['mo_contract_id'] = Hash::get ( $this->request->query, 'p.mo_contract_id' );
+        $searchData ['dashboard_name'] = Hash::get ( $this->request->query, 'p.dashboard_name' );
+
+
+
+
+
+
+
+
+
+
+
+・朝岡信彦
+7年前：封印解放のため、UGNに市の放棄を通告される。
+クーデターを起こし、FHとの契約で模造品の匣を手に入れ、災厄の蛇を封印した。その後市長となる。
+半年前：匣の持つ封印の力が弱まっていることが判明。柱を立てることで封印を維持できることが判明。
+七井千鶴を手に入れ、彼女を柱とする。フラジャイルはそれに反発するが単独での阻止は叶わず、最後の手段としてUGNに助けを求めようとしたところ反逆者指定を受け、始末された。
+しかし残ったフラジャイルの従者が自我を持ち、主人の遺志を継ぐため暴れ出す。
+フラジャイルは千鶴の居場所を知らないため、市の保有する施設を襲撃している。その咆哮に反応して封印が弱まり、ワーディングも使用できなくなっているため、朝岡は焦っている。
+
+
+
+・剣崎
+1か月前：椎名唯に依頼を受け、調査開始
+一週間前：pc4に行き当たり、尾行調査を行う。交戦し、撤退
+その後、反応を不自然に思って調べなおす
+4日前、甲野恭介に行き当たり、医院にあった彼の資料を入手
+その内容から、「七井千鶴という少女が"匣"の封印柱にされている」事を知る。
+3日前、その情報を持って朝岡の元へ。「お前はこういう事をしない、弱い奴の痛みが分かる人間だと思ってた」と対立。二人は中学からの同級生であり、朝岡の事は単に街を守るためにFHに鞍替えした良い奴だと思っていた。その場で始末され、家で火災によって死亡した風に偽装される。
+もっとも、甲野は温度変化によって血が変質しないよう、耐熱・保温性の高い容器を使用していた。この事を朝岡は知らない。SHが持ち帰ったのもそのままであるため、必要情報の入手後に火災跡を探せば見つけることができる。
+
+
+
+後始末から情報
+・トリガー1（SHについて調べる）
+：七井千鶴がどうなったか判明、匣の手掛かり
+・トリガー2（甲野について調べ、病院へ行く）
+：椎名唯が千鶴の義姉であること、
+・トリガー3（）
+
+
+
+
+・SHの依頼者は誰か
+椎名唯。義妹の千鶴を心配して知人に紹介された
+
+・どのようにして椎名唯は攫われるか
+単独行動時が望ましい
+ウロボロスショックで建物が崩れた時に
+
+・なぜSHは消されたか
+タワー地下の匣の秘密を知り、その事実をUGNに報告しようとしたから
+元々フリーランスだが、朝岡の思想に同情的だったためある程度協力はしていた　匣の事までは知らなかった
+
+
+・フラジャイルと椎名唯の関係
+「私の施術は神の技量だ。芸術だ、美しい、なればこそ壊したくなる」
+患者を施術する際に己の血の爆弾を埋め込み、自分が疑われないタイミングで破壊する
+しかし、七井千鶴の後遺症は治すことができず、彼女に執着するうち、人として好意を抱くようになる
+
+・
+
+
+
+
+
+
+
+
+
+
+リーチ推計モニタ属性/OTSベースモニタ属性/調査属性のデータ種類と
+リーチ/プロファイル/ブランドリフトsingle/ブランドリフトadhoc/リアルタイムのレポート種類で区別するの
+
+
+
+
+
+
+
+op-1
+椎名唯との遭遇
+ジャーム討伐直後に怪我してるところを見られて、めっちゃ心配される
+追及されて、逃げる
+ジャームの件を報告したら、上司から常盤木で活動中の他セルメンバーがいると教えられる
+
+md-1 pc4
+探偵を尋問する
+七井結子が行方不明になっていることを知る
+いっとき手記代わりにしていたレコーダーからPC4の事を知る
+これ以上を尋問によって聞き出すのは交渉20くらい
+でなければ、常盤木市にある探偵の事務所を漁る事になる
+（甲野の事も同様だが、彼の医療記録を見ると七井結子を大事にしていたので
+FHに脅されて七井結子を攫ったと考えた（見当違い））
+PC4が常盤木市に向かうとシーン終了
+
+md-1 pc4
+探偵を捜索する
+判定で事務所を発見するが、火事で消えている　家主は死亡
+
+md-2 pc1
+翌日、市内の探索中
+街で椎名唯に見つかって「なんで病院に行ってないのか」とむりやり連れて行かれそうになり、また逃げようとする
+警察署を襲撃するフラジャイル、地下施設まで追いかけて戦闘
+ワーディングは使えない
+椎名唯は市民の避難誘導をしている　PCは無視して突入するだろうけど
+戦闘の気配で皆集まる事ができていい
+戦闘後、瞬間退場を使おうとするフラジャイルにバイクアタックをかます椎名唯
+怯んだ隙にとどめを刺せる　フラジャイルは赤い血だまりとなって消える
+ぶつかった拍子に彼が落とした青石を椎名唯が拾うと、掌に青い文様が浮かぶ
+椎名唯は攫ってもいいし置いて行ってもいい
+知覚か知識<RG>9で従者とわかる
+
+md-3
+現場の収拾は保安部に任せられる
+現場に立ち入って調査するなどの流れ
+
+・info-1 pc1
+常盤木市について
+赤い男について
+フラジャイルについて
+->病院へ
+探偵について
+->事務所へ
+
+・md-4(事務所) pc4
+侵入はできるが、機密情報はパスワードと暗号化がかけられているようだ
+そうした防御を破るという形で知識/ハッキング系で7 成功で
+依頼人について
+七井結子について
+甲野恭介について
+が開放
+
+
+・md-5（病院) pc1
+
+・md-6 pc1　trigger()
+朝岡から連絡
+現場で保管していた青い石を紛失したが知らないか
+正直に話すorしらを切る
+椎名唯を手元に置かない場合、知らないところでフラジャイルに攫われる
+ずっとそばにおいていた場合、適当なタイミングで
+
+
+
+about Kono
+about Shina
+about Asaoka
+about the Blue
+
+about Nanai
+about why can't Wording
+
+・md-3
+
+
+
+
+・info-2
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+cx-1
+匚が崩壊し始める
+セレスタルタワー地下、大きな気配
+ワーディングが効かないので朝岡は配下に市民隔離を指示
+自身とOV戦力と椎名唯で颯を連れて行こうとする　戦闘
+椎名唯を元に戻すには朝岡を倒す　または
+
+cx-2
+匚が完全に破れる
+目覚めしものとの対決
+地上に出すと常盤木が終わるＥロイス
+究極存在
+
+
+
+
+調査項目
+・常盤木市について 情報<噂話 または ウェブ>:5
+・"フラジャイル"について.A 情報<FH>:7
+・"フラジャイル"について.B 情報<FH>:11
+・朝岡信彦について.A 情報<噂話 または 政治 または ウェブ>:6
+・朝岡信彦について.B 情報<FH>:9 
+・椎名恭介について 情報<噂話>:7 
+・柩（ケース）について 情報<FH> または 知識<レネゲイド>:16
+
+
+
+borderworld
+
+npcごとに
+・椎名唯
+正義感の強い一般巡査　電車に轢かれそうな子供を助けて市長表彰されたことがある
+PC1を目撃、助けられる
+正義の味方と信じて接近し、関わってくる
+「子供が危険な戦いをするのは間違ってる」と主張
+FHがどういうものか伝えると、困惑しつつ
+「だけど、君は助けてくれたし、悪い人には見えない」
+朝岡に
+
+
+「私は弱い。私は馬鹿だ。守っていたつもりで、何も守れてはいなかった。私の知らないところで戦い、犠牲になっている人たちがいた」
+
+・"フラジャイル"椎名恭介
+マスタークロック配下のFHエージェント
+T市出身で表の顔は医者
+婚約者の千鶴は元難病患者で、仕事上の関係を超える思い入れを持ってしまった感じ
+朝岡がT市を守る遺産を起動するために千鶴を使用
+朝岡との契約に請け合ったのがマスタークロック
+計画を止められないと感じた恭介は、最後の手段としてUGNに助力を乞う
+これを裏切りとして、フラジャイルを始末したのがPC2
+彼は確かに死亡したが、ブラム・ストーカーである彼の従者が遺志を継いだ
+千鶴を探し続けて、Ｔ市に配備されている朝岡の部下を襲う
+
+・"ロードメイヤー"朝岡信彦
+T市市長のFHセルリーダー
+元UGN支部長
+T市で災厄が発見され、UGNはT市の無期限封鎖処置を決定
+朝岡は街を守るため、反対する部下を殺してFHに助力を求める
+マスタークロックとの取引により、鍵を手に入れ、たまたま適合した千鶴を使って災厄を閉じる
+セレスタルタワー地下五層
+千鶴が救出され、災厄が現出しそうになる
+素質を持ち、なおかつ孤独
+千鶴のように精神のつながりを通じて救出されることがない安定体
+
+・災厄
+T市の地下層に封じられていた古代のウロボロス
+かつて都築らが封じた古代の百頭
+
+・松井伊鶴
+椎名恭介の婚約者で一般人
+遺産を維持するための柱となった
+セレスタルの第五層でコアとして眠り続けている
+
+
+
+
+
+
+
+
+
+
+
+
+
+tbl
+Clients
+.dashboard_auto_setting_flag
+.provided_pattern
+.define_file_name
+.define_file_s3_key
+.define_file_s2_url
+.define_file_upload_datetime
+
+
+
+Client.dashboard_auto_setting_flag
+Client.provided_pattern
+Client.file_upload
+is_click_file_select_btn
+
+file_change_flag
+Client.define_file_upload_datetime
+Client.define_file_s3_url
+
+
+
+
+「」
+
+
+
+fhsc
+malice
+demons grave
+it was true that i hoped you not to die for cheap reason
+ここは世界の悪徳
+遺産を秘するアジアの秘地
+通訳オペレーションであの子が付く形式
+兄の仇
+「危なっかしい君を心配していたのは本心だ」
+「つまらない事で死なれたら困るからな。兄の仇はこの手で殺す」
+「復讐（こんなこと）に善いも悪いもないだろう。私はただ、望むままに生きたいだけ。己の望みこそがＦＨ（私たち）の道理だ」
+「馬鹿を言うなよ。私と兄はFHの養成所で出逢った縁。家族に捨てられた私に、あの人は兄になってくれると言った。レネゲイドウイルスがなければ、私たちの出逢いはなかった」
+「私の帰る場所は、あの人の他になかった」
+「……そう、届かなかったか」
+「地獄で待っている……いつか、必ず……君も、こうなる……その日、を」
+
+
+シナリオ
+・本部伝令・支援役の非戦闘員だが兄の仇を取ろうとしているヒロインボス
+・ゼノスがヒロインに味方する　マスターキーがいずれ邪魔になる可能性があるため
+・兄はＵＧＮに内通しており、マスターキーの行った施設襲撃任務で死亡した
+・ゼノスの記録者の情報からその事を知り、遺産をプランナーに渡される
+・遺産は冥王の刀
+・以前殺した裏切り者のＦＨエージェントの名前が出ている
+・彼のＵＧＮへの内通は、妹のため　ＵＧＮ
+・場所はオセアニアの秘境
+
+・通訳者の立場を利用して、重要なポイントで誤読させて罠にはめる
+・ＵＧＮの遺産対策部隊も情報を得て行動、交戦
+・情報の出所はＵＧＮの通信傍受
+・だが、そのそもそもの情報をＵＧＮに流したのはヒロイン
+・で、そのプランと遺産をヒロインに与えたのがゼノス
+
+・ヒロインの決闘の算段：
+・遺産の性能、性質
+・振り抜けば灰の錆舞う
+「義なきことは百も承知です。ましてや鎮魂のためではない」
+「私は、私自身のために。ただ前に進むためにこの復讐をなす」
+
+
+
+
+
+
+
+
+heroine
+支援要員のエージェント
+武器の調整なども行っている
+通訳としてガイド
+弟を人質に、黒幕マスターに脅されてマスターキーを罠にはめるのに加担
+と見せかけて、黒幕の指示に実は違反
+「君と弟、どちらも捨てられないから、君が両方とも救ってくれる方に賭ける」
+
+黒幕
+"マスタークロック"時計坂悠久郎
+「私は"マスタークロック"。私が編んだ計画はただ針のように淡々と進捗を刻み続ける」
+欲望は絶対の安全、己を害する可能性のあるものの排除
+「世界中のレネゲイドを根絶する」という思想を持つマスターキー
+理想だけでなく実力もつけてきているので、障害になる前に排除したいと考える
+「遺産」を餌におびき寄せて罠に嵌め、任務中の死亡とする
+
+遺産
+オセアニアのある島
+
+
+
+
+表向きの敵
+UGN対遺産部隊ナイトフォール
+テレーズ・ブルムとその配下
+
+
+OP
+遺産を取ってくるように
+闇の棺を暴け
+数年に一日だけ海面に浮上する遺跡島
+予定日より早くに行く　ブレスレットから酸素を供給して呼吸できる
++マスタークロックの指令　裏切り者テネシー・ベイカーの遺体が消失していたので確認・回収してほしい
++ナイトフォールとの因縁　
+
+
+MD
+ソロモン諸島近海に向かい、浮上する遺跡に侵入
+ナイトフォールと交戦
+テネシーと交戦
+儀式の概要を知る
+
+
+マスタークロック登場
+十二年前　既に回収してある
+
+CX
+既に針を刺した
+島の浮上するこの日　この場所は　遺産の力が最も高まる夜でもある
+先んじて仕込んでおいた　気づかなかったか？そのバイタルチェッカーだ
+レトゥラの刻印は既に君たちに刻まれている
+
+
+PC1:見てないところに行かせるの不安だし常時ナビする
+"アイスツリー"明智千波　レコードと開発
+
+PC2:現地で謎の冒険家に遭遇
+"レガシーハンター"ヴィクター・C・ジョーンズ
+
+PC3:
+
+
+PC4:始末したはずの裏切り者の影
+"フラジャイル"
+
+PC5:もう一つの遺産、ソロモン王の遺産
+強羅瑠璃
+
+
+o-1
+世話役の姉さん、明智千波　ソロモン諸島はレトゥラ島の遺産"命王の遺体"の回収
+いつも無茶して怪我するのを心配される
+あの地域にはセルもないのでバックアップとして付いていく方向で話を進める
+前線には出ないけど仮説拠点を作って支援する
+
+o-4 or+
+オセアニアの調査隊が"フラジャイル"を目撃していた情報を得る
+彼の元上司、マスタークロックの依頼で確認に向かう
+
+o-2
+オセアニア事前調査隊の一員
+調査中に"レガシーハンター"を名乗る怪しい男に遭遇する
+捕縛しようとして取り逃がした　作戦行動中も警戒する必要があるだろう
+
+
+MD-1
+飛行機で最寄りの島に　アイスツリーも同行
+1,4が2と合流　している間に調査隊拠点が襲撃されている
+
+MD-Info
+・拠点襲撃者について
+フラジャイルらしい
+・レガシーハンターについて
+無所属のレネゲイド研究者・冒険家
+しばらく前からこの界隈に滞在しており、命王の遺産を狙っていると思われる
+・命王の遺跡について
+あの島は3日後に浮上するらしい
+海底で有毒なガスが発生しているらしい
+・ナイトフォールの動向について
+浮上以前の明日、潜水して先手を取ろうとしているらしい
+
+MD-2
+ナイトフォールと同じように、潜水して遺跡に侵入する作戦
+遺跡内部へ　水泳系の判定　潜水艦とか調達しても可
+アイスツリーはセーフハウスに待機して支援　酸素供給装置と毒抗体剤のブレスレット
+
+MD-3
+遺跡内部　空気が残っている層
+
+
+18世紀末　大臣イナは命王を騙してここに閉じ込めたのだ
+ここは城のように見えるが実態は命王の一族が檻
+オーヴァードの能力を振るい、民を恐れさせた命王の墓標
+不死なる王を永遠に留め置く無限牢
+闇の棺の向こうは一方通行の異界
+
+
+ボスの動機が弱い
+
+・cold tree
+ナビ姉貴
+途中で音信が絶える
+実はあいつの正体
+まだ見ない悪意
+
+・master clock
+・sion
+・frajile
+
+
+
+boss
+アイスツリー
+
+heroine
+？
+
+npcs
+プランナー：アイスツリーにプランを与えた
+フラジャイル：アイスツリーの兄　現在アイスツリーが擬態している
+マスタークロック：遺産調査担当で後方待機　黒幕ダミー
+レガシーハンター：命王の棺を狙っている
+
+prize
+命王の棺：
+
+
+・op-1
+一般婦警のお姉さん
+任務中に遭遇
+ＦＨなので記憶処理とかは基本しない
+ＵＧＮ側でされそうになるが、その前に逃走
+「どんな事情があっても貴方みたいな子供が戦うなんて間違っているわ。そうならないために私たちがいる」
+共闘する
+秩序側なので、最後にはたぶん決別
+
+
+
+HO1
+ロイス：椎名唯
+君はＦＨエージェントだ。
+ある日の任務におけるジャームとの交戦中、君は警察官である椎名唯織に遭遇する。
+ジャームに発砲した彼女をなし崩し的に守る結果になったわけだが、正義感の強い彼女は、君に戦う事をやめるように言ってきた。
+
+1.opでPC1を
+
+
+
+
+
+
+boarderworld
+npcs
+asaoka nobuhiko
+
+
+boss...asaoka nobuhiko
+T city
+
+
+
+
+ダッシュボード一覧
+
+レポート設定(リーチ)
+レポート設定(プロファイル)
+レポート設定（ブランドリフト）
+レポート設定（リアルタイム）
+
+調査票指定（共通）
+グラフ設定（リーチ）
+グラフ設定（プロファイル）
+グラフ設定（ブランドリフト）
+グラフ設定（リアルタイム）
+
+アイテム加工（ブランドリフト・リアルタイム共通）
+
+
+
+
+
+
+
+
+
+
+
+エラー「確定」時
+    array (size=1)
+      'AirsResearchInfo' => 
+        array (size=12)
+          'rid' => string '31111' (length=5)
+          'cid' => string '311' (length=3)
+          'rtype' => string '1' (length=1)
+          'rtitle' => string '初期企業Ｃ１１調査タイトル' (length=39)
+          'rname' => string '初期企業Ｃ１１調査名' (length=30)
+          'start_date' => string '2017-04-01 00:00:00' (length=19)
+          'end_date' => string '2017-04-07 00:00:00' (length=19)
+          'status' => string '10' (length=2)
+          'mo_order_id' => string '3111' (length=4)
+          'period' => string '' (length=0)
+          'rtype_name' => string '本調査' (length=9)
+          'period_text' =>
+
+
+array (size=5)
+  0 => string '【本調査】31111 初期企業Ｃ１１調査名' (length=51)
+  1 => string '' (length=0)
+  2 => string '' (length=0)
+  3 => string '' (length=0)
+  4 => string '' (length=0)
+
+「一時保存」時
+        array (size=12)
+          'rid' => string '31111' (length=5)
+          'cid' => string '311' (length=3)
+          'rtype' => string '1' (length=1)
+          'rtitle' => string '初期企業Ｃ１１調査タイトル' (length=39)
+          'rname' => string '初期企業Ｃ１１調査名' (length=30)
+          'start_date' => string '2017-04-01 00:00:00' (length=19)
+          'end_date' => string '2017-04-07 00:00:00' (length=19)
+          'status' => string '10' (length=2)
+          'mo_order_id' => string '3111' (length=4)
+          'period' => string '' (length=0)
+          'rtype_name' => string '本調査' (length=9)
+          'period_text' => 
+
+
+
+array (size=1)
+  0 => 
+    array (size=2)
+      'rid' => string '31111' (length=5)
+      'period' => string '【本調査】31111 初期企業Ｃ１１調査名' (length=51)
+
+for($i = 0; $i<5; $i++){
+                $researchDisplayPeriodSelectedList[$i] = [
+                        'rid' => Hash::get($this->request->data, 'DashboardReportEditForm.period_rid')[$i],
+                        'period' => Hash::get($this->request->data, 'DashboardReportEditForm.period_text')[$i]];
+            }
+
+刑部さん
+以下のチケットの対応が完了しましたので、ご確認よろしくお願いします。
+https://redmine.macromill.com/issues/101882
+https://github.com/macromilldev/adplat/pull/3132/files
+また、手隙となりますので、次の作業指示もお願いいたします。
+
+
+
+PC-X-Chrome 
+PC-X-Firefox 
+PC-X-Safari 
+Tablet-iOS-Safari
+Tablet-iOS-Chrome 
+SmartPhone-iOS-Safari 
+SmartPhone-iOS-Chrome 
+
+
+
+
+
+15:12-15:16
+chrome-1
+
+15:17-15:20
+chrome-20
+
+15:24-15:32
+chrome-39
+
+
+15:32-15:50
+ff-1
+
+16:21-16:27
+ff-20
+
+16:30-16:32
+ff-39
+
+
+16:36-16:40
+safari-1
+
+16:41-16:44
+safari-20
+
+16:48-16:54
+safari-39
+
+ID: adplat
+PW: bTLgbp65f
+
+
+19:37-19:42
+Tablet-Safari-20
+1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19
+
+19:44-19:49
+Tablet-Safari-39
+1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19
+
+19:51-19:55
+Tablet-Safari-1
+1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19
+
+
+20:09-20:17
+Tablet-Chrome-20
+
+12:19-12:23
+Tablet-Chrome-39
+
+12:28-12:32
+Tablet-Chrome-1
+
+
+10:48-10:52
+SP-Safari-20
+
+10:53-10:57 
+SP-Safari-1
+
+11:00-11:06
+SP-Safari-39
+
+
+11:23-11:26
+SP-Chrome-20
+
+11:41-11:48
+SP-Chrome-1
+
+11:57-12:02
+SP-Chrome-39
+
+
+12:38-12:41
+PC-Firefox-20
+1と10の滞在だけ？
+
+
+12:44-12:46
+PC-Safari-20
+
+12:50-12:52
+PC-Safari-39
+
+
+
+
+SP-IOS-Safari
+項番22
+
+
+・静止画imp
+172.31.31.196 - - [24/Jan/2018:18:19:44 +0900] "GET /imp/us004157uyw/4000676257-img-4c HTTP/1.1" 200 68 "http://ec2-52-197-171-225.ap-northeast-1.compute.amazonaws.com/ifnet/tag_test/test.php" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.10; rv:57.0) Gecko/20100101 Firefox/57.0" "response01.localdomain" "DE=1%2C1516785573; MIDLIST=be22ga3e8600676f0045a5d771e82298cce96407%2C151521749b0097c973125220101615c7c95a6466" "0.0.0.0"
+
+・静止画clk
+172.31.0.22 - - [24/Jan/2018:18:22:04 +0900] "GET /click/us004157uyw/4000676257-img-4c HTTP/1.1" 301 - "http://ec2-52-197-171-225.ap-northeast-1.compute.amazonaws.com/ifnet/tag_test/test.php" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.10; rv:57.0) Gecko/20100101 Firefox/57.0" "response01.localdomain" "DE=1%2C1516785715; MIDLIST=15152f9dad0010ba7391d120de7815c7c92ac649%2Cbe22g0cbd500c2600017b7d756a32298cc5ceb07" "0.0.0.0"
+
+・静止画JS
+172.31.0.22 - - [24/Jan/2018:18:44:37 +0900] "GET /cev/us004157uyw/0000676264-img-8a?r=9028 HTTP/1.1" 200 - "http://ec2-52-197-171-225.ap-northeast-1.compute.amazonaws.com/ifnet/tag_test/test.php" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.10; rv:57.0) Gecko/20100101 Firefox/57.0" "response01.localdomain" "DE=1%2C1516787057; MIDLIST=be22gc0fdf004415008f52d739f02298cc948d07%2C1515f97c25005eda73322c201d1d15c7c930e556" "0.0.0.0"
+
+
+・動画imp
+172.31.31.196 - - [24/Jan/2018:18:22:54 +0900] "GET /imp/us004157uyw/3000676270-mov-42 HTTP/1.1" 200 68 "http://ec2-52-197-171-225.ap-northeast-1.compute.amazonaws.com/ifnet/tag_test/test.php" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.10; rv:57.0) Gecko/20100101 Firefox/57.0" "response01.localdomain" "DE=1%2C1516785715; MIDLIST=15152f9dad0010ba7391d120de7815c7c92ac649%2Cbe22g0cbd500c2600017b7d756a32298cc5ceb07; c=fnrtl0g743.001; c1=5a68503cb1fb1078" "0.0.0.0"
+
+・動画clk
+172.31.31.196 - - [24/Jan/2018:18:25:06 +0900] "GET /click/us004157uyw/3000676270-mov-42 HTTP/1.1" 301 - "http://ec2-52-197-171-225.ap-northeast-1.compute.amazonaws.com/ifnet/tag_test/test.php" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.10; rv:57.0) Gecko/20100101 Firefox/57.0" "response01.localdomain" "DE=1%2C1516785899; MIDLIST=be22g1c46e00b515009becd70e332298ccf35007%2C15156cfcb70074bc735f922088a515c7c9a47ecb" "0.0.0.0"
+
+・動画0
+172.31.0.22 - - [24/Jan/2018:18:25:45 +0900] "GET /video/us004157uyw/3000676270-mov-42/play/0/ HTTP/1.1" 200 68 "http://ec2-52-197-171-225.ap-northeast-1.compute.amazonaws.com/ifnet/tag_test/test.php" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.10; rv:57.0) Gecko/20100101 Firefox/57.0" "response01.localdomain" "DE=1%2C1516785899; MIDLIST=be22g1c46e00b515009becd70e332298ccf35007%2C15156cfcb70074bc735f922088a515c7c9a47ecb; c=fnrto643zk.001; c1=5a6850f2d0867e9a" "0.0.0.0"
+
+・動画25
+172.31.31.196 - - [24/Jan/2018:18:47:47 +0900] "GET /video/us004157uyw/3000676270-mov-42/play/25/ HTTP/1.1" 200 68 "http://ec2-52-197-171-225.ap-northeast-1.compute.amazonaws.com/ifnet/tag_test/test.php" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.10; rv:57.0) Gecko/20100101 Firefox/57.0" "response01.localdomain" "DE=1%2C1516787260; MIDLIST=15150fce34005894736d1e20e5e815c7c922b4b9%2Cbe22g0fce30045890046d1d7ee5e2298cc822b07" "0.0.0.0"
+
+・動画50
+172.31.0.22 - - [24/Jan/2018:18:48:16 +0900] "GET /video/us004157uyw/3000676270 mov-42/play/50/ HTTP/1.1" 200 68 "http://ec2-52-197-171-225.ap-northeast-1.compute.amazonaws.com/ifnet/tag_test/test.php" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.10; rv:57.0) Gecko/20100101 Firefox/57.0" "response01.localdomain" "DE=1%2C1516787260; MIDLIST=15150fce34005894736d1e20e5e815c7c922b4b9%2Cbe22g0fce30045890046d1d7ee5e2298cc822b07; c=fnrubrzjzq.001; c1=5a685643c14b5ac6" "0.0.0.0"
+
+・動画75
+172.31.0.22 - - [24/Jan/2018:18:48:39 +0900] "GET /video/us004157uyw/3000676270 mov-42/play/75/ HTTP/1.1" 200 68 "http://ec2-52-197-171-225.ap-northeast-1.compute.amazonaws.com/ifnet/tag_test/test.php" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.10; rv:57.0) Gecko/20100101 Firefox/57.0" "response01.localdomain" "DE=1%2C1516787260; MIDLIST=15150fce34005894736d1e20e5e815c7c922b4b9%2Cbe22g0fce30045890046d1d7ee5e2298cc822b07; c=fnrubrzjzq.001" "0.0.0.0"
+
+・動画100
+172.31.31.196 - - [24/Jan/2018:18:49:58 +0900] "GET /video/us004157uyw/3000676270-mov-42/play/100/ HTTP/1.1" 200 68 "http://ec2-52-197-171-225.ap-northeast-1.compute.amazonaws.com/ifnet/tag_test/test.php" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.10; rv:57.0) Gecko/20100101 Firefox/57.0" "response01.localdomain" "DE=1%2C1516787388; MIDLIST=be22g8eb0500ab0a00e3efd7b47c2298ccdc0207%2C1515f8bec00068bf73c31f20e94815c7c93b2d4f" "0.0.0.0"
+
+・動画ctp
+172.31.31.196 - - [24/Jan/2018:18:50:36 +0900] "GET /video/us004157uyw/3000676270-mov-42/ctp/ HTTP/1.1" 200 68 "http://ec2-52-197-171-225.ap-northeast-1.compute.amazonaws.com/ifnet/tag_test/test.php" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.10; rv:57.0) Gecko/20100101 Firefox/57.0" "response01.localdomain" "DE=1%2C1516787388; MIDLIST=be22g8eb0500ab0a00e3efd7b47c2298ccdc0207%2C1515f8bec00068bf73c31f20e94815c7c93b2d4f; c=fnrue1i3jc.001; c1=5a6856c6f6b0cc70" "0.0.0.0"
+
+・動画skp
+172.31.0.22 - - [24/Jan/2018:18:51:27 +0900] "GET /video/us004157uyw/3000676270 mov-42/skip/ HTTP/1.1" 200 68 "http://ec2-52-197-171-225.ap-northeast-1.compute.amazonaws.com/ifnet/tag_test/test.php" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.10; rv:57.0) Gecko/20100101 Firefox/57.0" "response01.localdomain" "DE=1%2C1516787481; MIDLIST=be22ga3d120051a2001122d76d7f2298ccdd0107%2C15150f74db0014a073b60c204f4015c7c961b1ba" "0.0.0.0"
+
+・動画JS
+172.31.0.22 - - [24/Jan/2018:18:51:56 +0900] "GET /cev/us004157uyw/4000676285-mov-43?r=2653 HTTP/1.1" 200 - "http://ec2-52-197-171-225.ap-northeast-1.compute.amazonaws.com/ifnet/tag_test/test.php" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.10; rv:57.0) Gecko/20100101 Firefox/57.0" "response01.localdomain" "DE=1%2C1516787481; MIDLIST=be22ga3d120051a2001122d76d7f2298ccdd0107%2C15150f74db0014a073b60c204f4015c7c961b1ba; c=fnrufledto.001; c1=5a68571fe17a18e3" "0.0.0.0"
+
+・Web_ファイル形式
+172.31.0.22 - - [24/Jan/2018:18:30:37 +0900] "GET /access/us004157uyw/0002650264-da/utm.png?r=http%3A%2F%2Fec2-52-197-171-225.ap-northeast-1.compute.amazonaws.com%2Fifnet%2Ftag_test%2Finput.html&qs=&p=key1%3D%26key2%3D%26key3%3D%26key4%3D%26key5%3D%26key6%3D%26key7%3D%26key8%3D%26key9%3D%26key10%3D HTTP/1.1" 200 68 "http://ec2-52-197-171-225.ap-northeast-1.compute.amazonaws.com/ifnet/tag_test/test.php" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.10; rv:57.0) Gecko/20100101 Firefox/57.0" "response01.localdomain" "DE=1%2C1516786218; MIDLIST=1515bf671b00631573a75320dd1415c7c9a68e7f%2Cbe22g3015d006e9200e0c9d7c2472298cc2b8b07" "0.0.0.0"
+
+・Web_スクリプト形式
+172.31.0.22 - - [24/Jan/2018:18:42:44 +0900] "GET /access/us004157uyw/2002650271-22/utm.png?r=http%3A%2F%2Fec2-52-197-171-225.ap-northeast-1.compute.amazonaws.com%2Fifnet%2Ftag_test%2Finput.html&qs=&p=key1%3D%26key2%3D%26key3%3D%26key4%3D%26key5%3D%26key6%3D%26key7%3D%26key8%3D%26key9%3D%26key10%3D HTTP/1.1" 200 68 "http://ec2-52-197-171-225.ap-northeast-1.compute.amazonaws.com/ifnet/tag_test/test.php" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.10; rv:57.0) Gecko/20100101 Firefox/57.0" "response01.localdomain" "DE=1%2C1516786924; MIDLIST=151516640b00e80273f5682036b815c7c91d7f06%2Cbe22g9796700084d0005b1d759522298cc456a07; c=fnru5xuaor.001; c1=5a6854f3b097828c" "0.0.0.0"
+
+
+・滞在1
+172.31.31.196 - - [24/Jan/2018:18:32:22 +0900] "GET /visjs/us004157uyw/3000676295-vis-9a/visit.js HTTP/1.1" 200 564 "http://ec2-52-197-171-225.ap-northeast-1.compute.amazonaws.com/ifnet/tag_test/test.php" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.10; rv:57.0) Gecko/20100101 Firefox/57.0" "response01.localdomain" "MIDLIST=1515bf671b00631573a75320dd1415c7c9a68e7f%2Cbe22g3015d006e9200e0c9d7c2472298cc2b8b07; c=fnrttx4n9u.001" "0.0.0.0"
+172.31.0.22 - - [24/Jan/2018:18:32:22 +0900] "GET /vis/us004157uyw/3000676295-vis-9a/1?visid=328fa83fd459f7e14fb578f73bbcc9fc&cnt=0&r=http%3A%2F%2Fec2-52-197-171-225.ap-northeast-1.compute.amazonaws.com%2Fifnet%2Ftag_test%2Finput.html HTTP/1.1" 200 68 "http://ec2-52-197-171-225.ap-northeast-1.compute.amazonaws.com/ifnet/tag_test/test.php" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.10; rv:57.0) Gecko/20100101 Firefox/57.0" "response01.localdomain" "MIDLIST=1515bf671b00631573a75320dd1415c7c9a68e7f%2Cbe22g3015d006e9200e0c9d7c2472298cc2b8b07; c=fnrttx4n9u.001" "0.0.0.0"
+
+
+・滞在3
+172.31.0.22 - - [24/Jan/2018:18:54:35 +0900] "GET /visjs/us004157uyw/4000676309-vis-09/visit.js HTTP/1.1" 200 564 "http://ec2-52-197-171-225.ap-northeast-1.compute.amazonaws.com/ifnet/tag_test/test.php" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.10; rv:57.0) Gecko/20100101 Firefox/57.0" "response01.localdomain" "DE=1%2C1516787669; MIDLIST=15155445e40024b573267a20c7ad15c7c9469467%2Cbe22gcbd7200dba300a403d799d72298cc19a907" "0.0.0.0"
+172.31.0.22 - - [24/Jan/2018:18:54:35 +0900] "GET /vis/us004157uyw/4000676309-vis-09/3?visid=1c5e76039f0e6457cf9686a26801e80d&cnt=0&r=http%3A%2F%2Fec2-52-197-171-225.ap-northeast-1.compute.amazonaws.com%2Fifnet%2Ftag_test%2Finput.html HTTP/1.1" 200 68 "http://ec2-52-197-171-225.ap-northeast-1.compute.amazonaws.com/ifnet/tag_test/test.php" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.10; rv:57.0) Gecko/20100101 Firefox/57.0" "response01.localdomain" "DE=1%2C1516787669; MIDLIST=15155445e40024b573267a20c7ad15c7c9469467%2Cbe22gcbd7200dba300a403d799d72298cc19a907; c=fnruiuw4yo.001; c1=5a6857db5d8b67a5" "0.0.0.0"
+
+
+modified:straight heroine
+・以前倒したはずの裏切り者→遺産の能力で復活
+・姉のように心配してくれる同僚→遺産と二択で選ぶ展開
+・鍵を危険視する内部の敵対勢力
+・UGNナイトホークと遺産を巡って争い
+・「マスタークロック」
+
+OP：遺産を求めてオセアニアへ
+MD：
+MD:
+CX:ある島で待ち受ける剣客
+ED:
+
+
+
+
+Berial Blossum
+
+
+
+亀岡さん
+IEを前のテストの時にダウングレードしていたのを忘れていて、誤ってIE9で少し動作確認をしてしまったのですが
+ダッシュボード一覧からダッシュボード表示をしようとすると「お探しのページは存在しません」のエラーが出るので、一応報告します
+11の方はこれから更新再起動かけて実施します
+
+
+・滞在5
+172.31.0.22 - - [24/Jan/2018:18:57:16 +0900] "GET /visjs/us004157uyw/0000676316 vis-62/visit.js HTTP/1.1" 200 564 "http://ec2-52-197-171-225.ap-northeast-1.compute.amazonaws.com/ifnet/tag_test/test.php" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.10; rv:57.0) Gecko/20100101 Firefox/57.0" "response01.localdomain" "DE=1%2C1516787819; MIDLIST=1515ddf5860002f973fefd208ac315c7c9055168%2Cbe22g62eaf007d37004b92d7b5602298cc207907" "0.0.0.0"
+172.31.0.22 - - [24/Jan/2018:18:57:16 +0900] "GET /vis/us004157uyw/0000676316-vis-62/5?visid=1388274ce057e0ffa1fa16052650f0b4&cnt=0&r=http%3A%2F%2Fec2-52-197-171-225.ap-northeast-1.compute.amazonaws.com%2Fifnet%2Ftag_test%2Finput.html HTTP/1.1" 200 68 "http://ec2-52-197-171-225.ap-northeast-1.compute.amazonaws.com/ifnet/tag_test/test.php" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.10; rv:57.0) Gecko/20100101 Firefox/57.0" "response01.localdomain" "DE=1%2C1516787819; MIDLIST=1515ddf5860002f973fefd208ac315c7c9055168%2Cbe22g62eaf007d37004b92d7b5602298cc207907; c=fnruln2r2q.001; c1=5a68587c6b005afe" "0.0.0.0"
+172.31.31.196 - - [24/Jan/2018:18:57:21 +0900] "GET /vis/us004157uyw/0000676316 vis-62/5?visid=1388274ce057e0ffa1fa16052650f0b4&cnt=1&r=http%3A%2F%2Fec2-52-197-171-225.ap-northeast-1.compute.amazonaws.com%2Fifnet%2Ftag_test%2Finput.html HTTP/1.1" 200 68 "http://ec2-52-197-171-225.ap-northeast-1.compute.amazonaws.com/ifnet/tag_test/test.php" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.10; rv:57.0) Gecko/20100101 Firefox/57.0" "response01.localdomain" "DE=1%2C1516787819; MIDLIST=1515ddf5860002f973fefd208ac315c7c9055168%2Cbe22g62eaf007d37004b92d7b5602298cc207907; c=fnruln2r2q.001" "0.0.0.0"
+
+・滞在10
+172.31.0.22 - - [24/Jan/2018:18:58:39 +0900] "GET /visjs/us004157uyw/1000676329 vis-cf/visit.js HTTP/1.1" 200 566 "http://ec2-52-197-171-225.ap-northeast-1.compute.amazonaws.com/ifnet/tag_test/test.php" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.10; rv:57.0) Gecko/20100101 Firefox/57.0" "response01.localdomain" "DE=1%2C1516787912; MIDLIST=1515daf7cb009ab073edb320d76d15c7c98a9e64%2Cbe22g3908d003010002225d7e9fa2298cc148007" "0.0.0.0"
+172.31.31.196 - - [24/Jan/2018:18:58:39 +0900] "GET /vis/us004157uyw/1000676329 vis-cf/10?visid=d4b1f41b0982d4f1b1abaf19d37f8b94&cnt=0&r=http%3A%2F%2Fec2-52-197-171-225.ap-northeast-1.compute.amazonaws.com%2Fifnet%2Ftag_test%2Finput.html HTTP/1.1" 200 68 "http://ec2-52-197-171-225.ap-northeast-1.compute.amazonaws.com/ifnet/tag_test/test.php" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.10; rv:57.0) Gecko/20100101 Firefox/57.0" "response01.localdomain" "DE=1%2C1516787912; MIDLIST=1515daf7cb009ab073edb320d76d15c7c98a9e64%2Cbe22g3908d003010002225d7e9fa2298cc148007; c=fnrun2sy1o.001; c1=5a6858cf9beebee7" "0.0.0.0"
+172.31.0.22 - - [24/Jan/2018:18:58:49 +0900] "GET /vis/us004157uyw/1000676329-vis-cf/10?visid=d4b1f41b0982d4f1b1abaf19d37f8b94&cnt=1&r=http%3A%2F%2Fec2-52-197-171-225.ap-northeast-1.compute.amazonaws.com%2Fifnet%2Ftag_test%2Finput.html HTTP/1.1" 200 68 "http://ec2-52-197-171-225.ap-northeast-1.compute.amazonaws.com/ifnet/tag_test/test.php" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.10; rv:57.0) Gecko/20100101 Firefox/57.0" "response01.localdomain" "DE=1%2C1516787912; MIDLIST=1515daf7cb009ab073edb320d76d15c7c98a9e64%2Cbe22g3908d003010002225d7e9fa2298cc148007; c=fnrun2sy1o.001" "0.0.0.0"
+
+
+PC-Win-Chrome:55047	
+PC-Win-Firefox:55048	
+PC-Win-IE8:55049	
+PC-Win-IE9:55057	
+PC-Win-IE10:55066	
+PC-Win-IE11:55068	
+PC-Win-Edge:55078	
+PC-X-Chrome:55083	
+PC-X-Firefox:55107	
+PC-X-Safari:55125	
+Tablet-Android-Chrome:55133	
+Tablet-Android-Android:55140	
+Tablet-iOS-Safari:55143	
+Tablet-iOS-Chrome:55160	
+SmartPhone-Android-Chrome:55162	
+SmartPhone-Android-Android:55177	
+SmartPhone-iOS-Safari:55182	
+SmartPhone-iOS-Chrome:55191	
+ノイズ除去除外タグ：55194	
+MIDLIST-Cookieなし：55199	
+
+再実施
+
+・PC-ff-DEなし
+19:27-19:29
+
+・PC-Safari-DE期限切れ 動画JS
+19:33
+
+・Tab-Chrome-DE期限切れ Web-Script
+19:39
+
+・SmartPhone-iOS-Safari-DEなし　静止画JS
+19:44
+
+・SmartPhone-iOS-Chrome-DEなし　静止画JS
+19:50
+
+・SmartPhone-iOS-Chrome-DE切れ　滞在3,5,10
+19:53-19:54
+
+
+・win10-20（出る）
+11:32-11:35
+
+・win10-39（出る）
+11:38-11:39
+
+・win10-1（出ない）
+11:42-11:43
+
+・win9-20
+12:10-12:11
+
+・win9-39
+12:14-12:17
+
+・win9-1
+12:18-12:19
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
