@@ -1,0 +1,60 @@
+<html>
+<head>
+<meta charset="utf-8"/>
+</head>
+<body>
+
+consumer_key<input type="text" id="key"></input><br>
+consumer_secret<input type="text" id="secret"></input><br>
+<input type="button" id="token" value="TOKEN出力" onclick="token()"></input><br>
+<div id="result"></div>
+
+token_result<input type="text" id="token_result"></input><br>
+start_date<input type="text" id="start"></input><br>
+end_date<input type="text" id="end"></input><br>
+api_type<input type="text" id="api_type"></input><br>
+<input type="button" id="search" value="SEARCH出力" onclick="search()"></input><br>
+
+
+</form>
+
+<script>
+
+function token(){
+	var key = document.getElementById("key").value;
+	var secret = document.getElementById("secret").value;
+	
+	var command = "\"curl -H \"Content-Type: application/x-www-form-urlencoded\" -X POST http://api.adplat-dev.lognos.com/v1/token -d \"grant_type=client_credentials&client_id="
+	+key+
+	"&client_secret=\""
+	+secret+
+	" -i\"";
+	
+	document.getElementById("result").textContent = command;
+}
+
+function search(){
+	
+	command = "curl -H \"Authorization: Bearer "
+	+&I31&+
+	"-X GET "
+	+&T4&+
+	"/v1/search?app_id="
+	+&I37&I41&I43&I45&+
+	" -i";
+
+
+
+}
+
+
+
+
+
+
+</script>
+
+
+
+</body>
+</html>

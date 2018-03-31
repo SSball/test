@@ -1,0 +1,23 @@
+<html>
+<head><title>Do</title><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"></head>
+<body>
+<script language="JavaScript">
+function doScript(val){
+
+ array1=val.split(/\r?\n/g);
+ for (var i = 0; i < array1.length; i++) {
+    array1[i]=array1[i].replace(/.*'(.*)' => .*,?/,"$1");
+    array1[i]="('"+array1[i]+"'.*)\\R";    
+     }
+
+ val2=array1.join(".*");
+ document.getElementById('result').value =val2;
+}
+</script>
+
+<form id="editor" action="/search" method="GET" onsubmit="doScript(this.val.value);return false;">
+  <textarea name="val" > 置き換えたい文字</textarea>
+  <input type="submit" value="DoScript">
+
+
+<textarea id="result">出力</textarea>

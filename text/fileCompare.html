@@ -1,0 +1,51 @@
+<html>
+<head>
+<meta charset="utf-8"/>
+</head>
+<body>
+
+
+
+<br>
+<input type="button" onclick="compare()" value="compare"></input> <input type="button" onclick="clearText1()" value="clear"></input>
+
+<input type="button" onclick="clearText2()" value="clear" style="position: relative; top: 0; left:255px;"></input><br>
+
+<textarea name="txt" rows="10" cols="50" id="target1"></textarea> <textarea name="txt2" rows="10" cols="50" id="target2"></textarea>
+
+
+<div id="result"></div>
+
+<script>
+
+function compare(){
+	
+	var obj1 = document.getElementById("target1").value;
+	var obj2 = document.getElementById("target2").value;
+	
+	if(obj1 == "" || obj2 == ""){
+		document.getElementById("result").textContent="fill in, please";
+	}else if(obj1==obj2){
+		document.getElementById("result").textContent="true";
+	}else{
+		document.getElementById("result").textContent="false";
+	}
+}
+
+function clearText1(){
+	document.getElementById("target1").value="";
+	document.getElementById("result").textContent="";
+}
+
+function clearText2(){
+	document.getElementById("target2").value="";
+	document.getElementById("result").textContent="";
+}
+
+
+</script>
+
+
+
+</body>
+</html>
