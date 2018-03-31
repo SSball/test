@@ -1,0 +1,448 @@
+  , '{"contractManageId":"1",
+  "contractId":"1",
+  "from":"2017\/11\/01 00:00",
+  "to":"2017\/11\/30 23:59",
+  "tagAllocation":"1",
+  "sexAllocation":"1",
+  "ageAllocation":"1",
+
+
+
+  "panelId":["1","6","7","17"],
+  "fileType":"1",
+  "baseType":"2",
+
+・ステージ用Ｄロイス/1868
+剣鬼：かつて伝説の人斬りと呼ばれた存在だ。仮に今はそうでなかったとしても、君の魂に染みついた血の匂いが絶えることはなく、
+武器を用いた白兵攻撃のＣ値-1（下限5） 侵食+10 3回まで
+この攻撃で戦闘不能になり、即時復活しなかったキャラは死亡する
+
+御庭番：将軍用命の密偵
+
+
+
+
+
+
+
+
+
+
+
+
+API-001：Imp/Pv,API-002：Frequency,API-003：CookieSync,API-004：ダッシュボード,API-005：ダッシュボード一括ダウンロード
+
+
+
+
+
+vendors
+clients
+company
+accounts
+
+
+
+亀山社中
+グラバー商会
+1866年6月の第二次幕長戦争
+長州藩の軍艦ユニオン号
+脱藩浪人、軽格の武士、庄屋、町民
+「本藩を脱する者、および他藩を脱する者、海外の志のある者、この隊に入る」
+「運輸、射利、投機、開拓、本藩の応援」
+近代商社
+
+moonless, in 30s, moonface_beings, cut it off from sky
+1932-1936cmp all4,5 3pcs
+showa adv PSIers
+rich juvnile without violence:1
+avenger for sth, all is gone:2
+national ruler:3
+cm1:murderer in teito
+->sth gave pow to him
+cm2:floating cafe
+->survivor of war experiment, shutted up
+cm3:
+before last wrong call by normal
+
+at Oumi station
+
+河田小龍 ジョン万次郎
+世界と対等に付き合うため、日本には大きな船とそれを動かせる人材が必要
+
+久坂玄瑞
+いまや大名も公卿（くぎょう）も頼りにならず、これからは草莽（そうもう）の人々（志のある在野の人々）が立ち上がらなければいけない
+
+幕府の軍艦奉行並（ぶぎょうなみ）である勝海舟
+
+池田屋の変
+禁門の変
+操練所も勝塾も閉鎖
+亀山社中
+寺田屋で働いていたお龍
+ボディーガード役の長府藩士・三吉慎蔵
+第二次長州征伐
+船中八策
+その１ヶ月後
+見廻組
+
+
+
+大政奉還
+武力派
+都築枠
+勝先生
+徳川慶喜
+
+日本人のＯＶ化
+これしかないと気付いた
+その後でないとできないこと
+Ｖの散布＋ショック付与
+奉還論の目的
+
+cp
+京都池田
+cp
+:shinsengumi
+長州征伐
+cp
+:bakufu messanger
+奉還と勅令の10/14
+:iwakura assassin
+cp
+day break
+：ryoma
+日本を今一度せんたくいたし申候
+世の人は我を何とも言わば言え我が成す事は我のみぞ知る
+義理などは夢にも思ふことなかれ　身をしばらるるものなり
+
+
+
+
+単に以前より体制側が知っていたものを知らなかった
+病の一種であることなどは判明していなかったが、それを知り
+培養し、拡散する方法を得る
+江戸直下にレネゲイドの竜巻を発生させて散布
+OV海軍
+
+
+
+
+
+
+
+
+stolen from shrine:legacy
+secret contract at the otherside = tycoon and ryoma
+he got edo castle in return of old system reserved
+-> is why return was necessary
+blade tornado dragon of wind
+-> is how to start pandemic
+
+-> 
+
+mysterious angrican
+shinsengumi
+oniwaban
+last tycoon
+shrine executer
+
+:messanger of tairo
+:member of shinsengumi
+:castle gardner
+
+
+
+
+next arecham
+trigger scinario
+elnie askd : fix clock then visit artisan
+->fixed but this is correct, the other side must be broken
+
+mind beat and broken proud
+one is fallen and fixer is resonance
+
+
+
+tar deprived all effects and deleted by resonounce
+cried a help and he will come
+
+
+            [
+                    'id' => '3',
+                    'vendor_company_id' => '1',
+                    'stage_type' => '3',
+                    'company_id' => '4',
+                    'client_id' => '1',
+                    'contract_manage_id' => '2',
+                    'created_flag' => '1',
+                    'deleted_flag' => '0'
+            ],
+
+            [
+                    'id' => '25',
+                    'vendor_company_id' => '1',
+                    'stage_type' => '3',
+                    'company_id' => '16',
+                    'client_id' => '2',
+                    'contract_manage_id' => '2',
+                    'created_flag' => '1',
+                    'deleted_flag' => '0',
+            ],
+satellite
+moon
+original:childfood friend
+eclipse: bug in the moon, alchemy, daughter of faust
+false hearts total atk : coolhead, mastermind, all masterrace, 
+->wy not before now : 
+
+master angel spirit : master IC
+eclipse : create UB jarms
+
+.first contact
+as set, start of two
+
+.node angel:kain
+stolen part of ic:angel
+to reraise sth, escaped from fh
+
+
+.node spirit:
+
+.node master:moon
+ic cannot cut off from moon
+fh total atk vs 
+project IC
+
+.eclipse:eater
+reach moon
+aika iselburn faust
+born by load and lonely
+
+ウルズがAngel、カインがヴェルザンディ、サテライトがスクルド、
+
+memory break code: by master mind
+project infinitycode
+project anothereden
+project noasarc
+
+1
+何もないサテライトの独白
+op　アイカの最期　捕虜奪還、現在軸でサテライトを保護
+脱出、しかし町全体にワーディングと封鎖を受ける
+協力して脱出経路を確保、
+あと一歩でエージェントと遭遇、戦闘して脱出
+
+2
+帰還から日常期
+同時に盗み出されたangelのコード
+回収に向かった樋浦の離反
+
+
+
+
+「僕はかつて想い人を失った、君と同じように。だからその気持ちはわかる」
+「サテライトに彼女の記憶を読み込ませて再演させる。たとえ偽物でも構わない」
+「そうだろう？彼女の持つ思い出は本物だ　彼女の持つ感情は真実だ　彼女の持つ姿はまさしく合同だ　そうさ、誰にも否定できない」
+
+3...
+
+
+
+4...
+人格を有するRBの作成の余波
+
+
+5...
+マスターとリンクした瞬間、イクリプスが出現
+ＩＣにより分断されたため、誘導して再構築
+「自分の都合に合わせて書き上げた地球史」をもとにAEを早期実行
+審判＝銀河規模のレネゲイド嵐で、ごく一部のＯＶを除いて全人類を駆逐
+残ったＯＶも駆逐され、ＩＣをベースに再度の地球史が開始
+ＣＤは地球に組み込まれたＮＡ計画やＡＥ計画の実行用プログラム
+ＦＨの目的は全人類のＯＶ化による審判の突破
+審判となる大レネゲイド嵐の模造を発生
+演目は終末　ＵＢの粒子で隠れる月
+
+
+
+
+1:encounter, 2:anti tr-fic,
+3:
+end:eclipse
+
+to know human is to know malice
+
+ousia,logos,personna
+
+javascript:(function(){param=1;for(c=0;c<101;c++){w=window.open(location.href+'?count='+param);w.close();}}())
+
+curl http://img.adplat-dev.lognos.com/imp/us004134qnj/0000674549-img-79
+
+・countパラメータを付与した版
+送られるパラメータの番号のずれをなくすためにスリープさせたので、実行に2分弱かかる
+javascript:(function(){param=1;for(c=0;c<101;c++){w=window.open(location.href+'?count='+param);w.close();param++;StartTime=new Date();while(new Date()-StartTime<1000){}}}())
+
+・ＵＲＬを直接入力する版
+Cookieの有無によるのか、初回の動作が正常にいかないことがある
+javascript:(function(){url=prompt('URL');if(url!==''&&url!==null){for(n=0;n<101;n++){w=window.open(url);w.close();}}}())
+
+
+
+AH,NO,SA,KM,OR,
+..BR,BD,SO,EX,HN
+johnannes seeked for treasure of barbarous
+to liberate something
+.modulous:module for something
+
+.he is seeking for shado of god one day
+.he hears voice cannnot hear
+.the voice only he hears
+.surely said I am it
+.lala that is from anotherworld
+.kimisika shiranai kotowohanasu
+.lala soreha maken no mitibiki
+
+我が理念も善性も、依然として変わらず
+ただ、人の持つ強さと己がある形を受け入れたまで
+
+なるほど　肉体と過去を失った我は、もはや別人なのかもしれん
+"形変われば心も変わる"ソーンダークという神は気に入らないが、あの言は妙を得ているのかもな
+
+
+
+
+・アンチＴＦ
+・Eclipseの子 黒のウイルスに月が呑まれ
+・P/MyEden
+・データに飲み込まれたサテライトの内部へ
+・P/AnotherEdenとP/NoasArk
+・０の中で助けるアイカ「二人じゃない、三人いる」
+・記憶とは呪い
+・太古にプランナーがＵＢを封印したのが月
+・ダブルとダブル
+・アイカの仇を倒す
+
+
+
+
+
+
+
+
+fh/recordmaster:nijo saiga
+fh/the end:hiura kanata
+IC build by old master race
+MR is who create wld
+project/another eden
+project/noas ark
+some day huge renagade storm will atack the earth.
+some ancient prophets see the future and
+prepare for it : the system to restart world
+the sattelite will record 
+
+the wld is reproduced again and again.
+
+world is reproduced again and again
+judgement day will come
+records:shape gene
+moonly curse:old MR set:codewel cursed
+agent/"codekeeper"minagi_takato->MR:wld 
+
+eclipse:
+age-record
+reflexive phenomena:再帰現象
+ages:ww,the -20y,romas reconquest,
+
+
+crumble reverse
+・綾瀬は輪廻の獣による侵食を受け、欲望が膨張している
+・矢神は一般人だがワーディングに耐性がある
+・春日は春日ではなく擬態した樋浦彼方　
+・樋浦の目的は輪廻の獣(!=綾瀬)の回収
+
+
+
+
+
+
+・皆木凌輔/ルナティック
+FHの若き天才17歳
+実験セル「センチュリオ」リーダー
+サテライトの作成実験の主任
+
+・D4FLD(ディーフィールド)
+皆木が精製した新物質レネゲイド・デコンポーザーを用いた
+エフェクトを使用した攻撃を無効化するバリア装置
+ただし、弱点として、同時に防ぐことのできるレネゲイド波長幅に限界があり
+4種類以上のシンドロームを組み合わせて同時に攻撃された場合、崩壊する
+
+・エナ/庭師(ガートナー)
+植物使いのオルクス、皆木セルのチルドレン
+過酷な肉体改造を経て高いRC能力を有し、実験材料兼護衛として使われていた
+一見して従順だが、自己防衛心が強い
+自分のミスでサテライトを逃がしてしまい、皆木に"廃棄"を宣言されたため
+寝返ることを決めてＰＣに協力する
+その後はFHでありながら所属セルのない野良犬同然の生活を送るが
+偶然手にしたフラグメントの力を引き出し、コードウェル博士に素質を認められ、マスターレイスになる
+マスターレイス21(ファイ) エナ・L・コードウェル
+その欲望は「支配なき世界」
+
+・樋浦彼方/終わった男
+2話あたりで登場。適当に時間稼ぎをして撤退する。
+不死者の主人に仕える執事だったが、彼女が消滅し、その復讐も果たしたため"終わった"。
+ICの真実を知り、消滅した彼女を再構成する可能性を知ったことで「蘇る」。
+
+
+・"月蛾(イクリプス)"アイカ・アカシア・ファウスト
+Astral-Instance-Collecting-Archive of Akasia。後のオカルティストらに「アカシックレコード」と呼ばれたもの。
+ファウスト博士の作り出した錬金生物であり"娘"。
+人類初の人工レネゲイドビーイング。
+ファウストは生誕後しばらく彼女に書物の知識を与え続けるが、その吸収効率を恐れて封印。
+人間をあてにしないと"学んだ"アイカは、数十年後に老いたファウストを「父である貴方を一目見たい」と泣き落とし騙して封印を解かせ、彼を殺害。
+世に放たれてからは、多くの人間と"魔術的契約"を行って知識を収集し、神秘界で知の悪魔と呼ばれた。
+やがて月のICの存在を知ると、自らの存在をデータ生命体に変換することで、「IC内部に記録されたデータ」として活動を開始。IC内部のレコードを閲覧し耽るようになる。のちに都築鏡花の例のように、彼女の方法を真似をしてICに到達しようとする者はいたが、先んじてIC内部にいた彼女の排除を受けた。
+朝比奈愛佳と名前が似ているのは偶然だが、自分と同じ境遇のサテライトを助けたレイへのあてつけとして、ICに存在した彼女の性格・容姿のデータを借りて行動している。
+目的は「フラグメントを再収集し、サテライトも取り込み、再度ICを完成させる」こと、だったが。
+
+・"マスターレイス05"ヨハン・C・コードウェル
+未だ欲望に目覚めていないマスターレイス、だったが。
+
+
+
+
+
+
+
+
+
+Fragment 0　分界区画(Miniascape)"月の庭"　：邂逅と脱出
+Fragment 1  白面知己(Reflection)"君の欠片"　：初めてのフラグメント回収
+Fragment 2　""　：ゼノス接触
+
+
+
+Fragment N　愛照虚像(Truefiction)"果の契約"　：樋浦との決戦
+
+Fragment N　世界饗宴(Devourer)"深淵の口"　：たる戦闘
+
+Fragment X　""
+
+Last Fragment　
+
+Synthesis 1　終端事象(Endpoint)"星食む月蛾"　：アイカ・ファウスト決戦
+Synthesis 0　再起燃焼""
+
+
+
+
+
+
+
+
+
+
+
+
+
+
