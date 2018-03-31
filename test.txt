@@ -1,0 +1,28 @@
+・phpunit
+cd /vagrant 
+/vagrant/app/Console/cake test app  Controller/UrlAggregateTagSelectController --stderr
+
+cd /vagrant 
+/vagrant/app/Console/cake test app Console/DashboardAutoCreateShell --stderr
+
+・バージョンチェンジ
+cd app
+./composer.phar require aws/aws-sdk-php:3.36.0
+
+cd app
+./composer.phar require aws/aws-sdk-php:^2.7@dev 
+
+
+
+dev:52.68.56.244 
+
+・apatch確認
+cat /var/log/macromill/acc_2017121917.log
+tail -f -n50 /var/log/macromill/acc_2018012418.log | grep "access"
+
+・response確認
+cat /var/log/adplat/response/response.log
+tail -f -n50 /var/log/adplat/response/response.log | grep ":access"
+
+
+https://k5.macromill.com/e/test20180108_1/index2.php?mid=900000&cid=1&panelType=1
